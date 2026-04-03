@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ContactModal from './ContactModal';
 import AboutModal from './AboutModal';
+import Image from 'next/image';
 
 // Registrar el plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -221,14 +222,17 @@ export default function Navigation() {
               
               {/* Logo - Left Edge */}
               <div ref={logoRef} className="flex items-center space-x-3">
-                {/* <div className="w-3 h-3 bg-white rounded-full"></div> */}
-                <Link href="/" className={`text-gradient-ios hover:text-blue-400 transition-all duration-500 ${
-                  scrolled 
-                    ? 'text-2xl lg:text-3xl xl:text-4xl' 
-                    : 'text-2xl lg:text-3xl xl:text-4xl scale-105'
-                }`}>
-                  <span className="font-neue">Tangodev</span>
-                  <span className="font-neue"></span>
+                <Link href="/" className="transition-all duration-500 hover:opacity-80">
+                  <Image 
+                    src="/imgs/logoblanco.png" 
+                    alt="Tangodev" 
+                    width={800} 
+                    height={240}
+                    className={`transition-all duration-500 ${
+                      scrolled ? 'h-40 w-auto' : 'h-52 w-auto'
+                    }`}
+                    priority
+                  />
                 </Link>
               </div>
 

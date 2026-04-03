@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { X, Send, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -68,32 +69,16 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
     setIsSubmitting(true);
 
     try {
-      // Obtener datos del formulario
-      const formData = new FormData(e.currentTarget);
-      const data = {
-        name: formData.get('name') as string,
-        email: formData.get('email') as string,
-        phone: formData.get('phone') as string || undefined,
-        'project-type': formData.get('project-type') as string,
-        budget: formData.get('budget') as string || undefined,
-        message: formData.get('message') as string,
-      };
+      // Enviar con EmailJS
+      const result = await emailjs.sendForm(
+        'service_jy30k4w', // Service ID
+        'template_ep9zoqc', // Template ID
+        e.currentTarget,
+        'qh9gEflQcEoNQntav' // Public Key
+      );
 
-      // Enviar a la API
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Error al enviar el mensaje');
-      }
-
+      console.log('Email enviado:', result.text);
+      
       setIsSubmitting(false);
       setIsSuccess(true);
 
@@ -104,7 +89,7 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
     } catch (error) {
       console.error('Error al enviar formulario:', error);
       setIsSubmitting(false);
-      alert(error instanceof Error ? error.message : 'Error al enviar el mensaje. Por favor, intentá nuevamente o escribinos directamente a tangodev08@gmail.com');
+      alert('Error al enviar el mensaje. Por favor, intentá nuevamente o escribinos directamente a tangodev08@gmail.com');
     }
   };
 
@@ -139,6 +124,9 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
         >
           {!isSuccess ? (
             <>
+              {/* Hidden from_email field for EmailJS */}
+              <input type="hidden" name="from_email" value="tangodev08@gmail.com" />
+              
               {/* Header */}
               <div className="mb-8">
                 <div className="text-stone-400 text-sm font-pp-neue font-medium tracking-[0.2em] uppercase mb-4">
