@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white;
+  }
+
+  /* Personalizar color de selección de texto */
+  ::selection {
+    background-color: #d9ff00;
+    color: #000000;
+  }
+
+  ::-moz-selection {
+    background-color: #d9ff00;
+    color: #000000;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-pp-neue {
+    font-family: "PP Neue Montreal", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-helvetica-neue {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .text-gradient-ios {
+    background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 50%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .animate-scroll-vertical {
+    animation: scroll-vertical 4s linear infinite;
+  }
+
+  @keyframes scroll-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .animate-scroll-horizontal {
+    animation: scroll-horizontal 14s linear infinite;
+  }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
