@@ -221,7 +221,9 @@ export default function Navigation() {
           }`}>
               
               {/* Logo - Left Edge */}
-              <div ref={logoRef} className="flex items-center space-x-3">
+              <div ref={logoRef} className={`flex items-center space-x-3 transition-all duration-500 ${
+                scrolled ? '-ml-8' : '-ml-12'
+              }`}>
                 <Link href="/" className="transition-all duration-500 hover:opacity-80">
                   <Image 
                     src="/imgs/logoblanco.png" 
@@ -336,10 +338,12 @@ export default function Navigation() {
                 </button>
 
                 <button 
-                  onClick={() => setIsMobileMenuOpen(true)}
-                  className="lg:hidden bg-white text-black w-8 h-8 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="lg:hidden bg-white text-black w-9 h-9 rounded-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center p-0 group"
                 >
-                  <span className="text-sm font-bold">+</span>
+                  <span className={`text-base font-bold leading-none flex items-center justify-center transition-transform duration-300 ${
+                    isMobileMenuOpen ? 'rotate-45' : 'rotate-0'
+                  }`}>+</span>
                 </button>
               </div>
             </div>

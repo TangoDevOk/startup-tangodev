@@ -267,26 +267,58 @@ const Showcase = () => {
   }, [isMobile]);
 
 
-  const ITEMS_PER_PAGE = 3;
-  const totalPages = Math.ceil(services.length / ITEMS_PER_PAGE);
+  const ITEMS_PER_PAGE = isMobile ? 1 : 3;
+  const SCROLL_STEP = 1;
+  const totalPages = isMobile 
+    ? services.length 
+    : services.length - ITEMS_PER_PAGE + 1;
   const paginatedServices = services.slice(
-    currentPage * ITEMS_PER_PAGE,
-    (currentPage + 1) * ITEMS_PER_PAGE
+    currentPage,
+    currentPage + ITEMS_PER_PAGE
   );
 
   const goToNextPage = () => {
     if (currentPage < totalPages - 1) {
       setExpandedCard(null);
-      setCurrentPage(currentPage + 1);
+      setCurrentPage(currentPage + SCROLL_STEP);
     }
   };
 
   const goToPrevPage = () => {
     if (currentPage > 0) {
       setExpandedCard(null);
-      setCurrentPage(currentPage - 1);
+      setCurrentPage(currentPage - SCROLL_STEP);
     }
   };
+
+  // GSAP animation for mobile slide transitions
+  useEffect(() => {
+    if (!isMobile) return;
+    
+    const ctx = gsap.context(() => {
+      cardsRef.current.forEach((card, index) => {
+        if (!card) return;
+        
+        gsap.fromTo(card, 
+          { 
+            opacity: 0, 
+            x: 50,
+            scale: 0.95
+          },
+          { 
+            opacity: 1, 
+            x: 0,
+            scale: 1,
+            duration: 0.5,
+            ease: "power2.out",
+            delay: index * 0.1
+          }
+        );
+      });
+    }, cardsContainerRef);
+    
+    return () => ctx.revert();
+  }, [currentPage, isMobile]);
 
   const handleCardExpansion = useCallback((cardId: number) => {
     if (isAnimating) return;
@@ -366,7 +398,7 @@ const Showcase = () => {
   }, [expandedCard, isMobile, currentPage]);
 
   const getExpandedCardWidth = () => {
-    const visibleCards = ITEMS_PER_PAGE;
+    const visibleCards = paginatedServices.length;
     const normalCardWidth = 500; 
     const gap = 24; 
     const availableWidth = window.innerWidth > 1024 ? window.innerWidth - 160 : 1400; 
@@ -374,6 +406,33 @@ const Showcase = () => {
     const otherCardsWidth = (visibleCards - 1) * normalCardWidth;
     const expandedWidth = availableWidth - otherCardsWidth - totalGaps;
     return Math.max(expandedWidth, 800);
+  };
+
+  // Touch/Swipe handlers for mobile
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      goToNextPage();
+    }
+    if (isRightSwipe) {
+      goToPrevPage();
+    }
   };
 
   return (
@@ -398,9 +457,9 @@ const Showcase = () => {
             </div>
           </div>
 
-          <div ref={cardsContainerRef} className="relative w-full">
-            {/* Navegación - Flecha Izquierda */}
-            {currentPage > 0 && (
+          <div ref={cardsContainerRef} className="relative w-full" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+            {/* Navegación - Flecha Izquierda - Desktop only */}
+            {!isMobile && currentPage > 0 && (
               <button
                 onClick={goToPrevPage}
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
@@ -410,8 +469,8 @@ const Showcase = () => {
               </button>
             )}
             
-            {/* Navegación - Flecha Derecha */}
-            {currentPage < totalPages - 1 && (
+            {/* Navegación - Flecha Derecha - Desktop only */}
+            {!isMobile && currentPage < totalPages - 1 && (
               <button
                 onClick={goToNextPage}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
@@ -591,6 +650,27 @@ const Showcase = () => {
               );
             })}
             </div>
+            
+            {/* Pagination dots - Mobile only */}
+            {isMobile && (
+              <div className="flex justify-center gap-2 mt-6">
+                {services.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setExpandedCard(null);
+                      setCurrentPage(index);
+                    }}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      currentPage === index 
+                        ? 'bg-white w-6' 
+                        : 'bg-white/30 hover:bg-white/50'
+                    }`}
+                    aria-label={`Ir al proyecto ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
           
         </div>
