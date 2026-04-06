@@ -18,6 +18,12 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
 
   useEffect(() => {
     if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
+      // Bloquear scroll del body
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      
       // Animación de apertura
       const tl = gsap.timeline();
       
@@ -40,28 +46,40 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
         { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
         "-=0.2"
       );
-    } else if (overlayRef.current && modalRef.current) {
-      // Animación de cierre
-      const tl = gsap.timeline();
+    } else {
+      // Restaurar scroll del body inmediatamente
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
       
-      tl.to(modalRef.current, {
-        x: '100%',
-        duration: 0.4,
-        ease: "power3.in"
-      });
-      
-      tl.to(overlayRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in"
-      }, "-=0.2");
+      // Animación de cierre (solo si hay refs)
+      if (overlayRef.current && modalRef.current) {
+        const tl = gsap.timeline();
+        
+        tl.to(modalRef.current, {
+          x: '100%',
+          duration: 0.4,
+          ease: "power3.in"
+        });
+        
+        tl.to(overlayRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in"
+        }, "-=0.2");
+      }
     }
+    
+    // Cleanup cuando el componente se desmonta
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
   }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999]">
+    <div className="fixed inset-0 z-[99999]">
       {/* Overlay oscuro */}
       <div
         ref={overlayRef}

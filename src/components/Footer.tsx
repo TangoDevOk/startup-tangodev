@@ -29,6 +29,7 @@ const Footer = () => {
   };
 
   return (
+    <>
     <footer className="w-full relative overflow-hidden">
       {/* Puente visual para conectar con el componente de arriba */}
       <div className="absolute top-0 left-0 right-0 h-16"></div>
@@ -391,20 +392,21 @@ const Footer = () => {
         </motion.div>
 
         <AboutModal isOpen={isAboutModalOpen} onClose={() => setIsAboutModalOpen(false)} />
-        <LegalModal 
-          isOpen={legalModalOpen} 
-          onClose={() => {
-            setLegalModalOpen(false);
-            setLegalModalType(null);
-          }}
-          type={legalModalType}
-        />
         <ContactModal 
           isOpen={isContactModalOpen} 
           onClose={() => setIsContactModalOpen(false)} 
         />
       </div>
     </footer>
+    <LegalModal 
+      isOpen={legalModalOpen} 
+      onClose={() => {
+        setLegalModalOpen(false);
+        setLegalModalType(null);
+      }}
+      type={legalModalType}
+    />
+    </>
   );
 };
 

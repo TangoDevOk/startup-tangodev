@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { X, Send, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 import emailjs from '@emailjs/browser';
 
 interface ContactModalProps {
@@ -20,6 +22,12 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
 
   useEffect(() => {
     if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
+      // Bloquear scroll del body
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      
       // Reset states
       setIsSuccess(false);
       setIsSubmitting(false);
@@ -46,22 +54,34 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
         { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
         "-=0.2"
       );
-    } else if (overlayRef.current && modalRef.current) {
-      // Animación de cierre
-      const tl = gsap.timeline();
+    } else {
+      // Restaurar scroll del body inmediatamente
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
       
-      tl.to(modalRef.current, {
-        x: '100%',
-        duration: 0.4,
-        ease: "power3.in"
-      });
-      
-      tl.to(overlayRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in"
-      }, "-=0.2");
+      // Animación de cierre (solo si hay refs)
+      if (overlayRef.current && modalRef.current) {
+        const tl = gsap.timeline();
+        
+        tl.to(modalRef.current, {
+          x: '100%',
+          duration: 0.4,
+          ease: "power3.in"
+        });
+        
+        tl.to(overlayRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in"
+        }, "-=0.2");
+      }
     }
+    
+    // Cleanup cuando el componente se desmonta
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
   }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -96,7 +116,7 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999]">
+    <div className="fixed inset-0 z-[99999]">
       {/* Overlay oscuro */}
       <div
         ref={overlayRef}
@@ -104,23 +124,39 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
         onClick={onClose}
       />
       
-      {/* Modal panel - 1/3 de pantalla */}
+      {/* Modal panel */}
       <div
         ref={modalRef}
         className="absolute top-0 right-0 h-full w-full lg:w-[40%] bg-stone-900 shadow-2xl overflow-hidden"
       >
-        {/* Botón cerrar */}
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors group"
-        >
-          <X className="w-6 h-6 text-white group-hover:rotate-90 transition-transform duration-300" />
-        </button>
+        {/* Header con Logo y botón cerrar */}
+        <div className="flex items-center justify-between px-6 py-2 border-b border-white/10">
+          {/* Logo */}
+          <Link href="/" className="transition-all duration-500 hover:opacity-80 -ml-2">
+            <Image 
+              src="/imgs/logoblanco.png" 
+              alt="Tangodev" 
+              width={200} 
+              height={150}
+              className="h-32 w-auto"
+              priority
+            />
+          </Link>
+          
+          {/* Botón cerrar */}
+          <button
+            onClick={onClose}
+            className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 group"
+          >
+            <span className="text-white text-base font-bold leading-none flex items-center justify-center rotate-45 transition-transform duration-300 group-hover:rotate-90">+</span>
+          </button>
+        </div>
 
         {/* Contenido */}
         <div
           ref={contentRef}
-          className="relative h-full overflow-y-auto p-8 lg:p-12"
+          className="relative overflow-y-auto p-8 lg:p-12"
+          style={{ height: 'calc(100% - 148px)' }}
         >
           {!isSuccess ? (
             <>

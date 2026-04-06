@@ -272,6 +272,12 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
 
   useEffect(() => {
     if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
+      // Bloquear scroll del body
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      
       // Animación de apertura
       const tl = gsap.timeline();
       
@@ -294,22 +300,34 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
         { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
         "-=0.2"
       );
-    } else if (overlayRef.current && modalRef.current) {
-      // Animación de cierre
-      const tl = gsap.timeline();
+    } else {
+      // Restaurar scroll del body inmediatamente
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
       
-      tl.to(modalRef.current, {
-        x: '100%',
-        duration: 0.4,
-        ease: "power3.in"
-      });
-      
-      tl.to(overlayRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in"
-      }, "-=0.2");
+      // Animación de cierre (solo si hay refs)
+      if (overlayRef.current && modalRef.current) {
+        const tl = gsap.timeline();
+        
+        tl.to(modalRef.current, {
+          x: '100%',
+          duration: 0.4,
+          ease: "power3.in"
+        });
+        
+        tl.to(overlayRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in"
+        }, "-=0.2");
+      }
     }
+    
+    // Cleanup cuando el componente se desmonta
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
   }, [isOpen]);
 
   if (!isOpen || !type) return null;
@@ -317,7 +335,7 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
   const content = legalContent[type];
 
   return (
-    <div className="fixed inset-0 z-[9999]">
+    <div className="fixed inset-0 z-[99999]">
       {/* Overlay oscuro */}
       <div
         ref={overlayRef}
@@ -331,15 +349,15 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
         className="absolute top-0 right-0 h-full w-full lg:w-[40%] bg-stone-900 shadow-2xl overflow-hidden"
       >
         {/* Header con Logo y botón cerrar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <div className="flex items-center justify-between px-6 py-2 border-b border-white/10">
           {/* Logo */}
           <Link href="/" className="transition-all duration-500 hover:opacity-80 -ml-2">
             <Image 
               src="/imgs/logoblanco.png" 
               alt="Tangodev" 
               width={200} 
-              height={60}
-              className="h-10 w-auto"
+              height={150}
+              className="h-32 w-auto"
               priority
             />
           </Link>
@@ -356,7 +374,8 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
         {/* Contenido */}
         <div
           ref={contentRef}
-          className="relative h-full overflow-y-auto p-8 lg:p-12"
+          className="relative overflow-y-auto p-8 lg:p-12"
+          style={{ height: 'calc(100% - 148px)' }}
         >
           {/* Header */}
           <div className="mb-8">
