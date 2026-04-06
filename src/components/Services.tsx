@@ -158,7 +158,7 @@ export default function Services() {
 
                 <div className="relative flex-grow flex px-8 pb-8 lg:px-10 lg:pb-10">
                   <img 
-                    src="/imgs/imagencordobaimports1.jpg" 
+                    src="/imgs/cordobaimports3.jpg" 
                     alt="E-commerce"
                     className="max-h-[200px] lg:max-h-[250px] w-auto object-contain"
                   />
