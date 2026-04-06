@@ -319,14 +319,14 @@ export default function Hero() {
               {/* Primary button with flip effect */}
               <button
                 onClick={() => setIsContactModalOpen(true)}
-                className="primary-button bg-white text-black px-5 py-3 sm:px-6 sm:py-4 lg:px-10 lg:py-5 rounded-lg hover:bg-gray-100 transition-colors font-medium text-sm sm:text-base lg:text-lg font-pp-neue relative overflow-hidden cursor-pointer flex-1 sm:flex-none"
+                className="primary-button bg-white text-black px-5 py-3 sm:px-6 sm:py-4 lg:px-10 lg:py-5 rounded-lg hover:bg-gray-100 transition-colors font-medium text-sm sm:text-base lg:text-lg font-pp-neue relative overflow-hidden cursor-pointer flex-1 sm:flex-none h-full"
               >
-                <div className="flip-container" style={{ transformStyle: "preserve-3d" }}>
+                <div className="flip-container h-full flex items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
                   <div style={{ backfaceVisibility: "hidden" }}>
                     Ver precios
                   </div>
                   <div
-                    className="absolute top-0 left-0 w-full"
+                    className="absolute inset-0 flex items-center justify-center"
                     style={{
                       backfaceVisibility: "hidden",
                       transform: "rotateX(180deg)"
