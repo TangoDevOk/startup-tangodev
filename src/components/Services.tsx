@@ -158,7 +158,7 @@ export default function Services() {
 
                 <div className="relative flex-grow flex px-8 pb-8 lg:px-10 lg:pb-10">
                   <img 
-                    src="/imgs/herolanding.png" 
+                    src="/imgs/imagencordobaimports1.jpg" 
                     alt="E-commerce"
                     className="max-h-[200px] lg:max-h-[250px] w-auto object-contain"
                   />
@@ -197,16 +197,16 @@ export default function Services() {
                 <div className="relative z-10 p-8 lg:p-10 flex flex-col flex-grow">
                   <div className="mb-4">
                     <span className="text-xs font-semibold text-stone-500 tracking-[0.2em] uppercase font-pp-neue">
-                      CORPORATIVO
+                      APLICACIONES WEB
                     </span>
                   </div>
                   
                   <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-4 font-pp-neue">
-                    Presencia digital profesional
+                      De la idea al producto funcional
                   </h3>
                   <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
-                    Sitios institucionales claros, modernos y confiables.
-                    Transmiten seriedad y mejoran la percepción de marca desde el primer contacto.
+                  Paneles, plataformas y herramientas a medida. Si tenés algo más complejo en mente que un sitio,
+                   también lo construimos.
                   </p>
                 </div>
               </div>
@@ -231,19 +231,13 @@ export default function Services() {
                   Mejor rendimiento, mejor experiencia y estructura optimizada para buscadores.
                 </p>
                 
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-                    <p className="text-stone-200 text-2xl font-bold font-pp-neue mb-1">3x</p>
-                    <p className="text-stone-500 text-xs font-pp-neue">Más rápido</p>
-                  </div>
-                  <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-                    <p className="text-stone-200 text-2xl font-bold font-pp-neue mb-1">+40%</p>
-                    <p className="text-stone-500 text-xs font-pp-neue">Conversión promedio</p>
-                  </div>
-                  <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-                    <p className="text-stone-200 text-2xl font-bold font-pp-neue mb-1">100%</p>
-                    <p className="text-stone-500 text-xs font-pp-neue">Mobile-friendly</p>
-                  </div>
+                <div className="rounded-xl overflow-hidden">
+                  <img
+                    src="/imgs/redesign-before-after.png"
+                    alt="Comparación antes y después de un rediseño web: de un sitio oscuro tipo portfolio a una landing clara orientada a conversión"
+                    className="w-full h-auto max-h-[280px] sm:max-h-[320px] lg:max-h-[360px] object-contain object-center"
+                    loading="lazy"
+                  />
                 </div>
               </div>
 
