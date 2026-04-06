@@ -88,17 +88,17 @@ const Showcase = () => {
       background: "url('/imgs/rentix1.jpg')",
       backgroundExpanded: "url('/imgs/rentix.png')",
       category: "SAAS",
-      url: "https://by-kalanit.vercel.app/", 
+      url: "", 
       details: []
     },
     {
       id: 4,
-      title: "Para Tierra Sur",
+      title: "Parada Tierra Sur",
       description: "Landing page para emprendimiento turístico en el sur argentino.",
       background: "url('/imgs/paradatierrasur.jpg')",
-      backgroundExpanded: "url('/imgs/imagencordobaimports1.jpg')",
+      backgroundExpanded: "url('/imgs/paradatierrasur-2.jpg')",
       category: "TURISMO",
-      url: "", 
+      url: "https://www.paradatierrasur.com.ar/", 
       details: []
     },
     {
@@ -106,7 +106,7 @@ const Showcase = () => {
       title: "Kal",
       description: "Sitio web para marca de diseño y arte visual.",
       background: "url('/imgs/kal.png')",
-      backgroundExpanded: "url('/imgs/imagencordobaimports1.jpg')",
+      backgroundExpanded: "url('/imgs/kalanit2.jpg')",
       category: "DISEÑO",
       url: "https://by-kalanit.vercel.app/", 
       details: []
@@ -116,9 +116,9 @@ const Showcase = () => {
       title: "Berti",
       description: "Plataforma web para servicios profesionales.",
       background: "url('/imgs/berti1.jpg')",
-      backgroundExpanded: "url('/imgs/imagencordobaimports1.jpg')",
+      backgroundExpanded: "url('/imgs/berti2.jpg')",
       category: "SERVICIOS",
-      url: "", 
+      url: "https://www.berti.com.ar/", 
       details: []
     },
     {
@@ -126,9 +126,9 @@ const Showcase = () => {
       title: "Hechos.ar",
       description: "Portal de noticias y actualidad con diseño moderno.",
       background: "url('/imgs/hechos.ar.jpg')",
-      backgroundExpanded: "url('/imgs/imagencordobaimports1.jpg')",
+      backgroundExpanded: "url('/imgs/hechos.ar-2.jpg')",
       category: "NOTICIAS",
-      url: "", 
+      url: "https://hechos.ar/", 
       details: []
     },
   ];
