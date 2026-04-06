@@ -390,14 +390,13 @@ const Footer = () => {
             ©{currentYear} TANGODEV. ALL RIGHTS RESERVED.
           </div>
         </motion.div>
-
-        <AboutModal isOpen={isAboutModalOpen} onClose={() => setIsAboutModalOpen(false)} />
-        <ContactModal 
-          isOpen={isContactModalOpen} 
-          onClose={() => setIsContactModalOpen(false)} 
-        />
       </div>
     </footer>
+    <AboutModal isOpen={isAboutModalOpen} onClose={() => setIsAboutModalOpen(false)} />
+    <ContactModal 
+      isOpen={isContactModalOpen} 
+      onClose={() => setIsContactModalOpen(false)} 
+    />
     <LegalModal 
       isOpen={legalModalOpen} 
       onClose={() => {
