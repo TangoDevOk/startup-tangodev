@@ -6,10 +6,10 @@ export default function WebDevelopmentCard() {
   const gridItems = [
     '/imgs/paradatierrasur.jpg',
     '/imgs/kal.png',
-    '/imgs/berti1.jpg',
+    '/imgs/berti3.jpg',
     '/imgs/hechos.ar.jpg',
     '/imgs/rentix.png',
-    '/imgs/imagencordobaimports1.jpg',
+    '/imgs/cordobaimports4.jpg',
   ];
 
   return (
