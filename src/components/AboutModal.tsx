@@ -210,7 +210,13 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
             </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex-shrink-0"></div>
+                <Image 
+                  src="/imgs/keke.JPG" 
+                  alt="Tomás Martorelli" 
+                  width={40} 
+                  height={40}
+                  className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                />
                 <div>
                   <a 
                     href="https://portfolio-tomas-martorelli.vercel.app/" 
