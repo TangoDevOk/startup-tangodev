@@ -278,17 +278,13 @@ const Showcase = () => {
   );
 
   const goToNextPage = () => {
-    if (currentPage < totalPages - 1) {
-      setExpandedCard(null);
-      setCurrentPage(currentPage + SCROLL_STEP);
-    }
+    setExpandedCard(null);
+    setCurrentPage((prev) => (prev >= totalPages - 1 ? 0 : prev + SCROLL_STEP));
   };
 
   const goToPrevPage = () => {
-    if (currentPage > 0) {
-      setExpandedCard(null);
-      setCurrentPage(currentPage - SCROLL_STEP);
-    }
+    setExpandedCard(null);
+    setCurrentPage((prev) => (prev <= 0 ? totalPages - 1 : prev - SCROLL_STEP));
   };
 
   // GSAP animation for mobile slide transitions
@@ -459,10 +455,10 @@ const Showcase = () => {
 
           <div ref={cardsContainerRef} className="relative w-full" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             {/* Navegación - Flecha Izquierda - Desktop only */}
-            {!isMobile && currentPage > 0 && (
+            {!isMobile && (
               <button
                 onClick={goToPrevPage}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
                 aria-label="Proyectos anteriores"
               >
                 <ChevronLeft className="w-6 h-6 text-white" />
@@ -470,10 +466,10 @@ const Showcase = () => {
             )}
             
             {/* Navegación - Flecha Derecha - Desktop only */}
-            {!isMobile && currentPage < totalPages - 1 && (
+            {!isMobile && (
               <button
                 onClick={goToNextPage}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
                 aria-label="Más proyectos"
               >
                 <ChevronRight className="w-6 h-6 text-white" />

@@ -3,6 +3,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { X } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 type LegalType = 'licenses' | 'terms' | 'privacy' | 'cookies';
 
@@ -328,13 +330,28 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
         ref={modalRef}
         className="absolute top-0 right-0 h-full w-full lg:w-[40%] bg-stone-900 shadow-2xl overflow-hidden"
       >
-        {/* Botón cerrar */}
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors group"
-        >
-          <X className="w-6 h-6 text-white group-hover:rotate-90 transition-transform duration-300" />
-        </button>
+        {/* Header con Logo y botón cerrar */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+          {/* Logo */}
+          <Link href="/" className="transition-all duration-500 hover:opacity-80 -ml-2">
+            <Image 
+              src="/imgs/logoblanco.png" 
+              alt="Tangodev" 
+              width={200} 
+              height={60}
+              className="h-10 w-auto"
+              priority
+            />
+          </Link>
+          
+          {/* Botón cerrar - estilo hamburguesa */}
+          <button
+            onClick={onClose}
+            className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 group"
+          >
+            <span className="text-white text-base font-bold leading-none flex items-center justify-center rotate-45 transition-transform duration-300 group-hover:rotate-90">+</span>
+          </button>
+        </div>
 
         {/* Contenido */}
         <div
