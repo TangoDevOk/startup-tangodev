@@ -13,7 +13,7 @@ export default function Hero() {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  
+
   // GSAP refs
   const heroRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -119,7 +119,7 @@ export default function Hero() {
 
       if (primaryButton) {
         const flipContainer = primaryButton.querySelector('.flip-container');
-        
+
         primaryButton.addEventListener('mouseenter', () => {
           gsap.to(primaryButton, { scale: 1.05, duration: 0.3, ease: "power2.out" });
           if (flipContainer) {
@@ -142,13 +142,13 @@ export default function Hero() {
 
       if (secondaryButton) {
         const flipContainerSecondary = secondaryButton.querySelector('.flip-container-secondary');
-        
+
         secondaryButton.addEventListener('mouseenter', () => {
-          gsap.to(secondaryButton, { 
-            scale: 1.02, 
+          gsap.to(secondaryButton, {
+            scale: 1.02,
             backgroundColor: 'rgba(255, 255, 255, 0.2)',
-            duration: 0.3, 
-            ease: "power2.out" 
+            duration: 0.3,
+            ease: "power2.out"
           });
           if (flipContainerSecondary) {
             gsap.to(flipContainerSecondary, { rotateY: 180, duration: 0.3, ease: "power2.out" });
@@ -158,11 +158,11 @@ export default function Hero() {
           }
         });
         secondaryButton.addEventListener('mouseleave', () => {
-          gsap.to(secondaryButton, { 
-            scale: 1, 
+          gsap.to(secondaryButton, {
+            scale: 1,
             backgroundColor: 'rgba(255, 255, 255, 0.15)',
-            duration: 0.3, 
-            ease: "power2.out" 
+            duration: 0.3,
+            ease: "power2.out"
           });
           if (flipContainerSecondary) {
             gsap.to(flipContainerSecondary, { rotateY: 0, duration: 0.3, ease: "power2.out" });
@@ -181,29 +181,29 @@ export default function Hero() {
 
       if (playButton) {
         playButton.addEventListener('mouseenter', () => {
-          gsap.to(playButton, { 
-            scale: 1.2, 
+          gsap.to(playButton, {
+            scale: 1.2,
             backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            duration: 0.3, 
-            ease: "power2.out" 
+            duration: 0.3,
+            ease: "power2.out"
           });
-          gsap.to(videoRef.current, { 
+          gsap.to(videoRef.current, {
             scale: 1.02,
-            duration: 0.3, 
-            ease: "power2.out" 
+            duration: 0.3,
+            ease: "power2.out"
           });
         });
         playButton.addEventListener('mouseleave', () => {
-          gsap.to(playButton, { 
-            scale: 1, 
-            backgroundColor: 'rgba(120, 120, 120, 1)',
-            duration: 0.3, 
-            ease: "power2.out" 
-          });
-          gsap.to(videoRef.current, { 
+          gsap.to(playButton, {
             scale: 1,
-            duration: 0.3, 
-            ease: "power2.out" 
+            backgroundColor: 'rgba(120, 120, 120, 1)',
+            duration: 0.3,
+            ease: "power2.out"
+          });
+          gsap.to(videoRef.current, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
           });
         });
       }
@@ -216,7 +216,7 @@ export default function Hero() {
         scrub: 1,
         onUpdate: (self: any) => {
           const progress = self.progress;
-          
+
           if (auroraRef.current) {
             gsap.to(auroraRef.current, {
               y: -50 * progress,
@@ -224,7 +224,7 @@ export default function Hero() {
               ease: "power2.out"
             });
           }
-          
+
           if (titleRef.current) {
             gsap.to(titleRef.current, {
               opacity: 1 - progress * 0.5,
@@ -256,7 +256,7 @@ export default function Hero() {
       {/* Content Grid */}
       <div className="relative z-10 w-full min-h-screen flex items-center justify-center pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-[432px_1fr] gap-8 lg:gap-24 items-center w-full">
-          
+
           {/* Left Column - Tech Stack */}
           <div ref={navLinksRef} className="hidden lg:block pl-8 lg:pl-10 xl:pl-14 pt-9">
             <div className="grid grid-cols-2 gap-8">
@@ -278,7 +278,7 @@ export default function Hero() {
                   Vercel & AWS
                 </div>
               </div>
-              
+
               {/* Column 2: Services */}
               <div className="space-y-1">
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
@@ -313,7 +313,7 @@ export default function Hero() {
                 </span>
               </h1>
             </div>
-       
+
             {/* CTA Buttons - Original style with better copy */}
             <div ref={buttonsRef} className="flex flex-row gap-3 sm:gap-3 lg:gap-4 mb-10 sm:mb-12 lg:mb-24">
               {/* Primary button with flip effect */}
@@ -325,9 +325,9 @@ export default function Hero() {
                   <div style={{ backfaceVisibility: "hidden" }}>
                     Ver precios
                   </div>
-                  <div 
+                  <div
                     className="absolute top-0 left-0 w-full"
-                    style={{ 
+                    style={{
                       backfaceVisibility: "hidden",
                       transform: "rotateX(180deg)"
                     }}
@@ -338,34 +338,34 @@ export default function Hero() {
               </button>
 
               {/* Secondary button with glass effect and flip */}
-              <button 
+              <button
                 onClick={() => setIsAboutModalOpen(true)}
-                className="secondary-button px-5 py-3 sm:px-6 sm:py-4 lg:px-10 lg:py-5 rounded-lg font-medium flex items-center justify-center gap-2 lg:gap-3 text-sm sm:text-base lg:text-lg font-pp-neue text-white backdrop-blur-sm transition-all duration-300 relative overflow-hidden flex-1 sm:flex-none" 
+                className="secondary-button px-5 py-3 sm:px-6 sm:py-4 lg:px-10 lg:py-5 rounded-lg font-medium flex items-center justify-center gap-2 lg:gap-3 text-sm sm:text-base lg:text-lg font-pp-neue text-white backdrop-blur-sm transition-all duration-300 relative overflow-hidden flex-1 sm:flex-none"
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.15)',
                   boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.1)'
                 }}
               >
                 <div className="icons-container flex -space-x-1 lg:-space-x-2">
-                  <img 
-                    src="https://i.pravatar.cc/150?img=12" 
-                    alt="Team member" 
+                  <img
+                    src="https://i.pravatar.cc/150?img=12"
+                    alt="Team member"
                     className="w-5 h-5 lg:w-6 lg:h-6 rounded-full object-cover"
                   />
-                  <img 
-                    src="https://i.pravatar.cc/150?img=33" 
-                    alt="Team member" 
+                  <img
+                    src="https://i.pravatar.cc/150?img=33"
+                    alt="Team member"
                     className="w-5 h-5 lg:w-6 lg:h-6 rounded-full object-cover"
                   />
                 </div>
-                
+
                 <div className="flip-container-secondary" style={{ transformStyle: "preserve-3d" }}>
                   <div style={{ backfaceVisibility: "hidden" }}>
                     Ver trabajos
                   </div>
-                  <div 
+                  <div
                     className="absolute top-0 left-0 w-full"
-                    style={{ 
+                    style={{
                       backfaceVisibility: "hidden",
                       transform: "rotateY(180deg)"
                     }}
@@ -375,14 +375,17 @@ export default function Hero() {
                 </div>
               </button>
             </div>
-       
+
             {/* Description */}
             <div className="max-w-full sm:max-w-[600px] mb-12 sm:mb-14 lg:mb-24">
               <p ref={descriptionRef} className="text-stone-200 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
-                No somos una agencia de 50 personas. Somos dos devs que hacen landings y e-commerce rápido y bien. Sin reuniones eternas, sin PowerPoints, sin boludeces.
+                No somos una agencia de 50 personas.
+                Somos dos devs que ejecutan.
+                Lanzamos landings y e-commerce que venden.
+                Sin vueltas. Sin reuniones eternas.
               </p>
             </div>
-       
+
             {/* Mobile Stack - simplified */}
             <div className="lg:hidden mt-12 sm:mt-14">
               <div className="space-y-2">
@@ -400,11 +403,11 @@ export default function Hero() {
 
       {/* Video Player - Bottom right */}
       <div ref={videoRef} className="absolute bottom-24 right-24 hidden lg:block z-20">
-        <div className="w-110 h-70 rounded-lg p-6" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
+        <div className="w-110 h-70 rounded-lg p-6" style={{ backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)' }}>
           <div className="w-full h-full bg-black rounded-lg overflow-hidden">
             <div className="relative w-full h-3/4 bg-black">
               <video
-                src="/videos/Reels.mp4" 
+                src="/videos/Reels.mp4"
                 className="w-full h-full object-cover"
                 autoPlay
                 loop
@@ -412,14 +415,14 @@ export default function Hero() {
                 playsInline
               />
             </div>
-            <div className="h-16 flex items-center justify-between px-2" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)'}}>
+            <div className="h-16 flex items-center justify-between px-2" style={{ backgroundColor: 'rgba(239, 238, 236, 0.06)' }}>
               <span className="text-white text-sm font-pp-neue font-medium">VER PROYECTOS</span>
-              <div 
+              <div
                 className="play-button w-6 h-6 bg-stone-800 rounded-full flex items-center justify-center hover:bg-gray-400 transition-colors cursor-pointer"
                 onClick={() => setIsVideoModalOpen(true)}
               >
                 <svg className="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
+                  <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
             </div>

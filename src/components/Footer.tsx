@@ -300,20 +300,14 @@ const Footer = () => {
             </motion.div>
 
             {/* Grupo Derecho - SOCIALS */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="space-y-6"
-            >
+            <div className="space-y-6 relative z-50">
               <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">SOCIALS</h4>
               <div className="space-y-3">
-                <a href="#" className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue">LinkedIn</a>
-                <a href="#" className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue">Instagram</a>
+                <a href="https://www.linkedin.com/in/tangodev" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue">LinkedIn</a>
+                <a href="https://www.instagram.com/tangodevok/?hl=es" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue">Instagram</a>
                 <a href="#" className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue">X/Twitter</a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
 
@@ -342,13 +336,14 @@ const Footer = () => {
         </div>
 
         {/* MOBILE - Texto grande "tangodev" centrado estilo referencia */}
-        <div className="relative block lg:hidden mb-8">
+        <div className="relative block lg:hidden mb-8 pointer-events-none">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 0.1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 2, ease: "easeOut" }}
             className="text-center font-pp-neue font-semibold text-[7rem] text-white leading-none tracking-tighter select-none pointer-events-none"
+            style={{ pointerEvents: 'none' }}
           >
             <span className="font-neue">Tangodev</span>
           </motion.div>
@@ -360,14 +355,14 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="hidden lg:flex justify-between items-center gap-6 -mt-16"
+          className="hidden lg:flex justify-between items-center gap-6 -mt-16 relative z-50"
         >
           <div className="text-white/90 text-sm font-pp-neue">
             ©{currentYear} TANGODEV. TODOS LOS DERECHOS RESERVADOS.
           </div>
           <div className="flex items-center gap-6 text-white/90 text-sm font-pp-neue">
-            <span>LINKEDIN.</span>
-            <span>INSTAGRAM.</span>
+            <a href="https://www.linkedin.com/in/tangodev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LINKEDIN.</a>
+            <a href="https://www.instagram.com/tangodevok/?hl=es" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">INSTAGRAM.</a>
             <span>X/TWITTER</span>
           </div>
           <div className="text-white/90 text-sm font-pp-neue">
@@ -385,6 +380,10 @@ const Footer = () => {
         >
           <div className="text-white/60 text-sm font-pp-neue tracking-wider">
             A THING BY TANGODEV
+          </div>
+          <div className="flex justify-center gap-4 text-white/90 text-sm font-pp-neue" style={{ position: 'relative', zIndex: 9999 }}>
+            <a href="https://www.linkedin.com/in/tangodev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" style={{ pointerEvents: 'auto', cursor: 'pointer', position: 'relative', zIndex: 10000 }}>LinkedIn</a>
+            <a href="https://www.instagram.com/tangodevok/?hl=es" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" style={{ pointerEvents: 'auto', cursor: 'pointer', position: 'relative', zIndex: 10000 }}>Instagram</a>
           </div>
           <div className="text-white/90 text-sm font-pp-neue">
             ©{currentYear} TANGODEV. ALL RIGHTS RESERVED.
