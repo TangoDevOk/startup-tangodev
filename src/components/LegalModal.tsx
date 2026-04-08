@@ -271,62 +271,66 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      
-      // Bloquear scroll del body
-      document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-      
-      // Animación de apertura
-      const tl = gsap.timeline();
-      
-      // Overlay fade in
-      tl.fromTo(overlayRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.3, ease: "power2.out" }
-      );
-      
-      // Modal slide in from right
-      tl.fromTo(modalRef.current,
-        { x: '100%' },
-        { x: '0%', duration: 0.5, ease: "power3.out" },
-        "-=0.1"
-      );
-      
-      // Content fade in
-      tl.fromTo(contentRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
-        "-=0.2"
-      );
-    } else {
-      // Restaurar scroll del body inmediatamente
-      document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
-      
-      // Animación de cierre (solo si hay refs)
-      if (overlayRef.current && modalRef.current) {
+    // Crear contexto GSAP para este componente
+    const ctx = gsap.context(() => {
+      if (isOpen) {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        
+        // Bloquear scroll del body
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        
+        // Animación de apertura
         const tl = gsap.timeline();
         
-        tl.to(modalRef.current, {
-          x: '100%',
-          duration: 0.4,
-          ease: "power3.in"
-        });
+        // Overlay fade in
+        tl.fromTo(overlayRef.current,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.3, ease: "power2.out" }
+        );
         
-        tl.to(overlayRef.current, {
-          opacity: 0,
-          duration: 0.3,
-          ease: "power2.in"
-        }, "-=0.2");
+        // Modal slide in from right
+        tl.fromTo(modalRef.current,
+          { x: '100%' },
+          { x: '0%', duration: 0.5, ease: "power3.out" },
+          "-=0.1"
+        );
+        
+        // Content fade in
+        tl.fromTo(contentRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+          "-=0.2"
+        );
+      } else {
+        // Restaurar scroll del body inmediatamente
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        
+        // Animación de cierre (solo si hay refs)
+        if (overlayRef.current && modalRef.current) {
+          const tl = gsap.timeline();
+          
+          tl.to(modalRef.current, {
+            x: '100%',
+            duration: 0.4,
+            ease: "power3.in"
+          });
+          
+          tl.to(overlayRef.current, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.in"
+          }, "-=0.2");
+        }
       }
-    }
+    });
     
-    // Cleanup cuando el componente se desmonta
+    // Cleanup cuando el componente se desmonta o cambia isOpen
     return () => {
       document.body.style.overflow = '';
       document.body.style.paddingRight = '';
+      ctx.revert(); // Limpia todas las animaciones GSAP
     };
   }, [isOpen]);
 
@@ -335,7 +339,7 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
   const content = legalContent[type];
 
   return (
-    <div className="fixed inset-0 z-[99999]">
+    <div className="fixed inset-0 z-50">
       {/* Overlay oscuro */}
       <div
         ref={overlayRef}
