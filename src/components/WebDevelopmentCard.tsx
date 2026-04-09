@@ -14,29 +14,33 @@ export default function WebDevelopmentCard() {
 
   return (
     <div 
-      className="relative rounded-2xl flex flex-col h-full min-h-[400px] overflow-hidden" 
+      className="relative rounded-2xl flex flex-col overflow-hidden lg:h-full lg:min-h-[400px]" 
       style={{backgroundColor: 'rgba(239, 238, 236, 0.06)'}}
     >
 
-      <div className="relative z-20 p-6 pl-8 pr-8 lg:pt-8 lg:pl-10 lg:pr-10 flex flex-col" style={{ backgroundColor: '#0e0e0d' }}>
-        <div className="mb-6">
+      <div className="relative z-20 shrink-0 px-5 pt-6 pb-5 sm:p-6 sm:pl-8 sm:pr-8 lg:pt-8 lg:pl-10 lg:pr-10 flex flex-col" style={{ backgroundColor: '#0e0e0d' }}>
+        <div className="mb-4 sm:mb-6">
           <span className="text-xs font-semibold text-stone-500 tracking-[0.2em] uppercase font-pp-neue">
             SITIOS WEB
           </span>
         </div>
-        <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium font-pp-neue mb-4">
+        <h3 className="text-stone-200 text-xl sm:text-2xl lg:text-3xl font-medium font-pp-neue mb-3 sm:mb-4">
           Landings que convierten, sin complicaciones
         </h3>
-        <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-8">
+        <p className="text-stone-400 text-[15px] sm:text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-4 sm:mb-6 lg:mb-8">
           Páginas enfocadas en performance y conversión.
           Carga rápida, SEO básico desde el inicio y estructura lista para campañas o lanzamientos.
         </p>
       </div>
 
-      <div className="relative h-[250px] lg:h-[250px] overflow-hidden flex-grow" style={{ backgroundColor: '#0e0e0d' }}>
+      {/* Móvil: altura fija compacta sin flex-grow (evita hueco si el padre se estira). Desktop: crece con la fila del grid. */}
+      <div
+        className="relative z-10 min-h-[200px] h-[200px] sm:min-h-[220px] sm:h-[220px] lg:min-h-[250px] lg:h-auto lg:flex-1 overflow-hidden"
+        style={{ backgroundColor: '#0e0e0d' }}
+      >
         {/* Grid con área extra - posicionado para que pueda moverse sin salirse */}
         <div 
-          className="absolute -inset-[100px] z-10"
+          className="absolute -inset-[40px] sm:-inset-[70px] lg:-inset-[100px] z-10"
         >
           <div className="w-full h-full relative">
             <GridMotion items={gridItems} gradientColor="rgba(0, 0, 0, 0.5)" />
