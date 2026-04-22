@@ -88,7 +88,7 @@ const Showcase = () => {
       background: "url('/imgs/rentix1.jpg')",
       backgroundExpanded: "url('/imgs/rentix.png')",
       category: "SAAS",
-      url: "", 
+      url: "https://rentixapp.ar/",
       details: []
     },
     {
@@ -128,7 +128,17 @@ const Showcase = () => {
       background: "url('/imgs/hechos.ar.jpg')",
       backgroundExpanded: "url('/imgs/hechos.ar-2.jpg')",
       category: "NOTICIAS",
-      url: "https://hechos.ar/", 
+      url: "https://hechos.ar/",
+      details: []
+    },
+    {
+      id: 8,
+      title: "Contasuite",
+      description: "Sistema de gestión contable para empresas. Automatización de procesos financieros y reportes en tiempo real.",
+      background: "url('/imgs/contasuite.jpg')",
+      backgroundExpanded: "url('/imgs/contasuite2.jpg')",
+      category: "FINTECH",
+      url: "https://basecontable.vercel.app/",
       details: []
     },
   ];

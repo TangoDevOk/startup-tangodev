@@ -138,8 +138,8 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           {/* Descripción principal */}
           <div className="space-y-6 mb-12">
             <p className="text-stone-300 text-lg lg:text-xl leading-relaxed font-pp-neue">
-              TangoDev nace de la pasión por crear soluciones web que realmente impactan. 
-              Somos un equipo de desarrolladores con experiencia en tecnologías modernas 
+              tangodev nace de la pasión por crear soluciones web que realmente impactan.
+              Somos un equipo de desarrolladores con experiencia en tecnologías modernas
               y metodologías ágiles.
             </p>
             <p className="text-stone-400 text-base lg:text-lg leading-relaxed font-pp-neue">
@@ -152,7 +152,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           <div className="grid grid-cols-2 gap-6 mb-12">
             <div className="space-y-2">
               <div className="text-3xl lg:text-4xl font-bold text-white font-pp-neue">
-                2+
+                5+
               </div>
               <div className="text-stone-400 text-sm font-pp-neue">
                 Años de experiencia

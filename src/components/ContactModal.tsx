@@ -254,36 +254,6 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
                   </select>
                 </div>
 
-                {/* Presupuesto estimado */}
-                <div>
-                  <label htmlFor="budget" className="block text-stone-400 text-sm font-medium font-pp-neue mb-2">
-                    Presupuesto estimado (opcional)
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    className="w-full px-4 py-3 bg-black/30 border border-stone-700 rounded-lg text-stone-200 focus:outline-none focus:border-[#d9ff00] transition-colors font-pp-neue appearance-none cursor-pointer hover:bg-black/40"
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a8a29e' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundPosition: 'right 1rem center',
-                      backgroundSize: '12px'
-                    }}
-                  >
-                  <option value="" className="bg-stone-900 text-stone-200">Seleccioná un rango</option>
-                  <option value="250-1000" className="bg-stone-900 text-stone-200">
-                    $250 - $1.000 USD (Landing / web simple)
-                  </option>
-                  <option value="700-2500" className="bg-stone-900 text-stone-200">
-                    $700 - $2.500 USD (Sitios y e-commerce)
-                  </option>
-                  <option value="2500-6000" className="bg-stone-900 text-stone-200">
-                    $2.500+ USD (Apps web / SaaS)
-                  </option>
-                  <option value="no-idea" className="bg-stone-900 text-stone-200">No estoy seguro</option>
-                  </select>
-                </div>
-
                 {/* Mensaje */}
                 <div>
                   <label htmlFor="message" className="block text-stone-400 text-sm font-medium font-pp-neue mb-2">

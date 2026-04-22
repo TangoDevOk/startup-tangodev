@@ -17,16 +17,17 @@ const Pricing = () => {
     {
       id: 'landing' as const,
       name: "Landing Page / Web Simple",
-      price: "Desde $250 USD",
+      price: "Desde $150 USD",
       timeline: "Entrega: 7-14 días",
+      techStack: ["Next.js", "WordPress", "Framer", "Webflow", "HTML/CSS"],
       features: [
-        "Diseño 100% personalizado y moderno",
-        "Next.js 15 + Tailwind CSS + animaciones fluidas",
-        "100% responsive y optimizada (Lighthouse 95+)",
-        "Formularios funcionales + integración (EmailJS, Resend, etc.)",
+        "Diseño 100% personalizado según tu marca",
+        "Tecnología a elección: Next.js, WordPress, Framer, Webflow o HTML/CSS",
+        "100% responsive y optimizada (Lighthouse 90+)",
+        "Formularios funcionales + integraciones (EmailJS, Resend, etc.)",
         "SEO técnico on-page completo",
-        "Deploy en Vercel + dominio y hosting 1er año incluido",
-        "30 días de soporte y ajustes gratis"
+        "Deploy incluido en la plataforma que prefieras",
+        "30 días de soporte técnico post-entrega"
       ],
       buttonText: "Comenzar",
       buttonStyle: "bg-black text-white hover:bg-neutral-900 border border-neutral-800 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300",
@@ -35,16 +36,17 @@ const Pricing = () => {
     {
       id: 'ecommerce' as const,
       name: "E-commerce / Tienda Online",
-      price: "Desde $699 USD",
+      price: "Desde $550 USD",
       timeline: "Entrega: 3-5 semanas",
+      techStack: ["Shopify", "WooCommerce", "Next.js", "Stripe"],
       features: [
-        "Todo lo de landing + catálogo ilimitado",
-        "Carrito y checkout optimizado",
-        "Mercado Pago + transferencias + tarjetas",
-        "Panel de administración simple (o Supabase/Stripe)",
-        "Gestión de stock y envíos (integración Andreani, Pickup)",
-        "Reportes básicos de ventas",
-        "Capacitación 1 hora para que manejes todo vos"
+        "Catálogo de productos ilimitado con filtros y búsqueda",
+        "Checkout optimizado con Mercado Pago, Stripe o transferencias",
+        "Panel de administración para gestionar productos y pedidos",
+        "Sistema de cupones, descuentos y promociones automatizadas",
+        "Reportes de ventas y estadísticas en tiempo real",
+        "Optimización para conversión (CRO) y mobile-first",
+        "Capacitación personalizada para manejar tu tienda"
       ],
       buttonText: "Comenzar",
       buttonStyle: "bg-white text-black hover:bg-[#d9ff00] transition-colors duration-300",
@@ -53,16 +55,17 @@ const Pricing = () => {
     {
       id: 'saas' as const,
       name: "Aplicación Web / SaaS",
-      price: "Desde $2.500 USD",
+      price: "Desde $2.000 USD",
       timeline: "Entrega: 2-4 meses",
+      techStack: ["Next.js", "React", "Node.js", "Supabase", "PostgreSQL"],
       features: [
-        "Backend escalable (Supabase / PostgreSQL)",
-        "Autenticación completa (magic links, social login)",
-        "Dashboard avanzado + roles de usuario",
-        "Stripe o Mercado Pago suscripciones",
-        "API REST o GraphQL",
-        "Integraciones con servicios externos",
-        "Soporte y mantenimiento 3 meses incluido"
+        "Arquitectura escalable con backend robusto (Supabase/PostgreSQL)",
+        "Autenticación segura (magic links, OAuth, 2FA)",
+        "Dashboard administrativo con roles y permisos",
+        "Integración de pagos recurrentes (Stripe/Mercado Pago)",
+        "API REST o GraphQL con documentación",
+        "Webhooks y integraciones con servicios de terceros",
+        "Soporte prioritario y mantenimiento 3 meses incluido"
       ],
       buttonText: "Comenzar",
       buttonStyle: "bg-black text-white hover:bg-neutral-900 border border-neutral-800 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300",
@@ -202,10 +205,21 @@ const Pricing = () => {
                   <p className="text-stone-400 text-base leading-relaxed font-medium font-pp-neue mb-6">
                     {plan.timeline}
                   </p>
-                  <div className="mb-6">
+                  <div className="mb-4">
                     <span className="text-4xl font-bold text-stone-200 font-pp-neue">
                       {plan.price}
                     </span>
+                  </div>
+                  {/* Tech Stack Badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {plan.techStack?.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 text-xs font-medium text-stone-300 bg-white/5 border border-white/10 rounded-md font-pp-neue"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                   {/* Línea separadora */}
                   <div className="w-full h-px bg-white/20 mb-6"></div>
