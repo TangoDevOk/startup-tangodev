@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Process = () => {
+  const t = useTranslations('process');
   const [expandedStep, setExpandedStep] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -34,51 +36,51 @@ const Process = () => {
   const steps = [
     {
       id: "01",
-      title: "Análisis",
-      subtitle: "Investigación y estrategia",
-      description: "Comenzamos conociendo a fondo tu negocio, objetivos y audiencia. Analizamos tu competencia, definimos el alcance del proyecto y establecemos una estrategia digital clara que maximice el retorno de inversión.",
-      deliverables: ["Brief estratégico completo", "Análisis competitivo", "Definición de objetivos medibles", "Propuesta técnica y cronograma"],
-      duration: "1-2 días"
+      title: t('steps.analysis.title'),
+      subtitle: t('steps.analysis.subtitle'),
+      description: t('steps.analysis.description'),
+      deliverables: t.raw('steps.analysis.deliverables') as string[],
+      duration: t('steps.analysis.duration')
     },
     {
       id: "02", 
-      title: "Estructura",
-      subtitle: "Wireframes y flujos",
-      description: "Diseñamos la estructura de información y los flujos de navegación. Creamos wireframes que optimizan la experiencia del usuario y facilitan la conversión, estableciendo las bases sólidas para el desarrollo.",
-      deliverables: ["Wireframes detallados", "Arquitectura de información", "Flujos de conversión", "Prototipo navegable"],
-      duration: "2-3 días"
+      title: t('steps.structure.title'),
+      subtitle: t('steps.structure.subtitle'),
+      description: t('steps.structure.description'),
+      deliverables: t.raw('steps.structure.deliverables') as string[],
+      duration: t('steps.structure.duration')
     },
     {
       id: "03",
-      title: "Diseño",
-      subtitle: "Identidad visual",
-      description: "Creamos una identidad visual que refleje la personalidad de tu marca y conecte con tu audiencia. Cada elemento está diseñado estratégicamente para generar confianza y maximizar las conversiones.",
-      deliverables: ["Diseños finales responsivos", "Sistema de diseño completo", "Recursos gráficos", "Guía de estilos de marca"],
-      duration: "3-5 días"
+      title: t('steps.design.title'),
+      subtitle: t('steps.design.subtitle'),
+      description: t('steps.design.description'),
+      deliverables: t.raw('steps.design.deliverables') as string[],
+      duration: t('steps.design.duration')
     },
     {
       id: "04",
-      title: "Código", 
-      subtitle: "Implementación técnica",
-      description: "Transformamos los diseños en código limpio, escalable y optimizado. Implementamos funcionalidades avanzadas, integraciones necesarias y aseguramos que tu sitio cargue rápido y funcione perfectamente.",
-      deliverables: ["Sitio web funcional", "Integraciones completadas", "Optimización SEO técnico", "Panel de administración"],
-      duration: "1-3 semanas"
+      title: t('steps.code.title'),
+      subtitle: t('steps.code.subtitle'),
+      description: t('steps.code.description'),
+      deliverables: t.raw('steps.code.deliverables') as string[],
+      duration: t('steps.code.duration')
     },
     {
       id: "05",
-      title: "Testing",
-      subtitle: "Control de calidad", 
-      description: "Realizamos pruebas exhaustivas en todos los dispositivos y navegadores. Verificamos la velocidad, funcionalidad y experiencia de usuario para garantizar que todo funcione perfectamente antes del lanzamiento.",
-      deliverables: ["Reporte de testing completo", "Optimización de velocidad", "Corrección de errores", "Certificación de calidad"],
-      duration: "2-3 días"
+      title: t('steps.testing.title'),
+      subtitle: t('steps.testing.subtitle'),
+      description: t('steps.testing.description'),
+      deliverables: t.raw('steps.testing.deliverables') as string[],
+      duration: t('steps.testing.duration')
     },
     {
       id: "06",
-      title: "Deploy",
-      subtitle: "Puesta en marcha",
-      description: "Lanzamos tu sitio web al mundo. Configuramos analytics, implementamos estrategias SEO y te capacitamos para gestionar el contenido. Incluimos soporte continuo para asegurar el éxito a largo plazo.",
-      deliverables: ["Sitio web en producción", "Google Analytics configurado", "Capacitación personalizada", "Manual de uso y soporte"],
-      duration: "1-2 días"
+      title: t('steps.deploy.title'),
+      subtitle: t('steps.deploy.subtitle'),
+      description: t('steps.deploy.description'),
+      deliverables: t.raw('steps.deploy.deliverables') as string[],
+      duration: t('steps.deploy.duration')
     }
   ];
 
@@ -352,13 +354,13 @@ const Process = () => {
                 ref={titleRef}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.05] tracking-[-1.2px] font-pp-neue text-center"
               >
-                Metodología que transforma
+                {t('mainTitle.line1')}
               </div>
               <div
                 ref={subtitleRef}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.05] tracking-[-1.2px] font-pp-neue text-center"
               >
-                ideas en productos digitales
+                {t('mainTitle.line2')}
               </div>
             </div>
             
@@ -367,7 +369,7 @@ const Process = () => {
                 ref={descriptionRef}
                 className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue text-center"
               >
-                Seis etapas estructuradas que garantizan resultados excepcionales en cada proyecto de desarrollo web.
+                {t('description')}
               </p>
             </div>
           </div>
@@ -445,16 +447,15 @@ const Process = () => {
                                 <div className="flex items-center gap-2 mb-4">
                                   <div className="w-2 h-2 bg-white/40 rounded-full"></div>
                                   <span className="text-stone-400 text-base font-medium font-pp-neue">
-                                    Duración: {step.duration}
+                                    {t('duration')}: {step.duration}
                                   </span>
                                 </div>
                               </div>
-                              
                               {/* Deliverables - Hidden for Deploy step */}
                               {step.id !== "06" && (
                                 <div>
                                   <h5 className="text-stone-200 text-lg lg:text-xl font-medium mb-4 font-pp-neue">
-                                    Entregables
+                                    {t('deliverables')}
                                   </h5>
                                   <div className="space-y-3">
                                     {step.deliverables.map((deliverable, idx) => (

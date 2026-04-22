@@ -43,6 +43,59 @@
       "letsGo": "¡Empecemos!"
     }
   },
+  "process": {
+    "mainTitle": {
+      "line1": "Metodología que transforma",
+      "line2": "ideas en productos digitales"
+    },
+    "description": "Seis etapas estructuradas que garantizan resultados excepcionales en cada proyecto de desarrollo web.",
+    "duration": "Duración",
+    "deliverables": "Entregables",
+    "steps": {
+      "analysis": {
+        "title": "Análisis",
+        "subtitle": "Investigación y estrategia",
+        "description": "Comenzamos conociendo a fondo tu negocio, objetivos y audiencia. Analizamos tu competencia, definimos el alcance del proyecto y establecemos una estrategia digital clara que maximice el retorno de inversión.",
+        "deliverables": ["Brief estratégico completo", "Análisis competitivo", "Definición de objetivos medibles", "Propuesta técnica y cronograma"],
+        "duration": "1-2 días"
+      },
+      "structure": {
+        "title": "Estructura",
+        "subtitle": "Wireframes y flujos",
+        "description": "Diseñamos la estructura de información y los flujos de navegación. Creamos wireframes que optimizan la experiencia del usuario y facilitan la conversión, estableciendo las bases sólidas para el desarrollo.",
+        "deliverables": ["Wireframes detallados", "Arquitectura de información", "Flujos de conversión", "Prototipo navegable"],
+        "duration": "2-3 días"
+      },
+      "design": {
+        "title": "Diseño",
+        "subtitle": "Identidad visual",
+        "description": "Creamos una identidad visual que refleje la personalidad de tu marca y conecte con tu audiencia. Cada elemento está diseñado estratégicamente para generar confianza y maximizar las conversiones.",
+        "deliverables": ["Diseños finales responsivos", "Sistema de diseño completo", "Recursos gráficos", "Guía de estilos de marca"],
+        "duration": "3-5 días"
+      },
+      "code": {
+        "title": "Código",
+        "subtitle": "Implementación técnica",
+        "description": "Transformamos los diseños en código limpio, escalable y optimizado. Implementamos funcionalidades avanzadas, integraciones necesarias y aseguramos que tu sitio cargue rápido y funcione perfectamente.",
+        "deliverables": ["Sitio web funcional", "Integraciones completadas", "Optimización SEO técnico", "Panel de administración"],
+        "duration": "1-3 semanas"
+      },
+      "testing": {
+        "title": "Testing",
+        "subtitle": "Control de calidad",
+        "description": "Realizamos pruebas exhaustivas en todos los dispositivos y navegadores. Verificamos la velocidad, funcionalidad y experiencia de usuario para garantizar que todo funcione perfectamente antes del lanzamiento.",
+        "deliverables": ["Reporte de testing completo", "Optimización de velocidad", "Corrección de errores", "Certificación de calidad"],
+        "duration": "2-3 días"
+      },
+      "deploy": {
+        "title": "Deploy",
+        "subtitle": "Puesta en marcha",
+        "description": "Lanzamos tu sitio web al mundo. Configuramos analytics, implementamos estrategias SEO y te capacitamos para gestionar el contenido. Incluimos soporte continuo para asegurar el éxito a largo plazo.",
+        "deliverables": ["Sitio web en producción", "Google Analytics configurado", "Capacitación personalizada", "Manual de uso y soporte"],
+        "duration": "1-2 días"
+      }
+    }
+  },
   "services": {
     "title": "Servicios de desarrollo web",
     "subtitle": "que transforman ideas en realidad",
