@@ -3,11 +3,13 @@
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 import ContactModal from './ContactModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CTA() {
+  const t = useTranslations('cta');
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -220,14 +222,14 @@ export default function CTA() {
               ref={titleRef}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-[114px] font-medium leading-[0.95] tracking-[-1.2px] text-gradient-ios font-pp-neue mb-4"
             >
-              Creemos{' '}
-              <span className="text-gradient-ios italic">algo</span>{' '}
+              {t('title.line1')}{' '}
+              <span className="text-gradient-ios italic">{t('title.something')}</span>{' '}
               <span className="relative text-gradient-ios">
-                extraordinario
+                {t('title.extraordinary')}
                 <div className="absolute inset-0 bg-white/8 rounded-full blur-xl -z-10 scale-125 animate-pulse"></div>
                 <div className="absolute inset-0 bg-white/4 rounded-full blur-2xl -z-20 scale-150 animate-pulse delay-500"></div>
               </span>{' '}
-              <span className="text-gradient-ios">juntos.</span>
+              <span className="text-gradient-ios">{t('title.together')}</span>
             </h1>
           </div>
 
@@ -237,8 +239,7 @@ export default function CTA() {
               ref={subtitleRef}
               className="text-stone-200 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue"
             >
-              Estás a solo un clic de transformar tu visión digital en realidad. 
-              Trabajemos juntos para crear soluciones web que impulsen tu negocio.
+              {t('subtitle')}
             </p>
           </div>
 
@@ -260,7 +261,7 @@ export default function CTA() {
                 }}
               >
                 <div style={{ backfaceVisibility: "hidden" }}>
-                  Iniciar proyecto
+                  {t('button.start')}
                 </div>
                 <div 
                   className="absolute top-0 left-0 w-full"
@@ -269,7 +270,7 @@ export default function CTA() {
                     transform: "rotateX(180deg)"
                   }}
                 >
-                  ¡Empecemos!
+                  {t('button.letsGo')}
                 </div>
               </div>
             </div>

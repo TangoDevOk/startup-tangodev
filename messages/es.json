@@ -30,6 +30,19 @@
       "integrations": "Integraciones"
     }
   },
+  "cta": {
+    "title": {
+      "line1": "Creemos",
+      "something": "algo",
+      "extraordinary": "extraordinario",
+      "together": "juntos."
+    },
+    "subtitle": "Estás a solo un clic de transformar tu visión digital en realidad. Trabajemos juntos para crear soluciones web que impulsen tu negocio.",
+    "button": {
+      "start": "Iniciar proyecto",
+      "letsGo": "¡Empecemos!"
+    }
+  },
   "services": {
     "title": "Servicios de desarrollo web",
     "subtitle": "que transforman ideas en realidad",
