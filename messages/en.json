@@ -77,6 +77,10 @@
   "pricing": {
     "title": "Investment for your project",
     "subtitle": "Reference ranges so you have an idea of the budget. Each project receives a custom quote based on scope, complexity and specific timeline. First consultation free of charge.",
+    "startButton": "Get Started",
+    "customCta": "Need something more specific?",
+    "customLink": "Let's talk about your project",
+    "customEnd": "and I'll prepare a custom quote for you.",
     "plans": {
       "landing": {
         "name": "Landing Page / Simple Website",
@@ -87,7 +91,7 @@
           "Technology of choice: Next.js, WordPress, Framer, Webflow or HTML/CSS",
           "100% responsive and optimized (Lighthouse 90+)",
           "Functional forms + integrations (EmailJS, Resend, etc.)",
-          "Complete on-page technical SEO",
+          "Complete technical on-page SEO",
           "Deploy included on your preferred platform",
           "30 days of post-delivery technical support"
         ]
@@ -120,11 +124,7 @@
           "Priority support and 3 months maintenance included"
         ]
       }
-    },
-    "startButton": "Get Started",
-    "customCta": "Need something outside these packages?",
-    "customLink": "Let's talk",
-    "customEnd": "to build a custom proposal."
+    }
   },
   "contact": {
     "quick": "QUICK CONTACT",

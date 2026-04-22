@@ -75,8 +75,8 @@
     "cta": "Ver más sobre nosotros"
   },
   "pricing": {
-    "title": "Inversión según tu proyecto",
-    "subtitle": "Rangos de referencia para que tengas una idea del presupuesto. Cada proyecto recibe una cotización personalizada según alcance, complejidad y timeline específicos. Primera consulta sin costo.",
+    "title": "Inversión para tu proyecto",
+    "subtitle": "Rangos de referencia para que tengas una idea del presupuesto. Cada proyecto recibe un presupuesto personalizado según alcance, complejidad y plazo específico. Primera consulta sin cargo.",
     "plans": {
       "landing": {
         "name": "Landing Page / Web Simple",
@@ -122,9 +122,9 @@
       }
     },
     "startButton": "Comenzar",
-    "customCta": "¿Necesitás algo fuera de estos paquetes?",
-    "customLink": "Conversemos",
-    "customEnd": "para armar una propuesta a medida."
+    "customCta": "¿Necesitás algo más específico?",
+    "customLink": "Hablemos de tu proyecto",
+    "customEnd": "y te armo un presupuesto a medida."
   },
   "contact": {
     "quick": "CONTACTO RÁPIDO",

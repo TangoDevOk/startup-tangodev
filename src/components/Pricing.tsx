@@ -19,58 +19,31 @@ const Pricing = () => {
   const plans = [
     {
       id: 'landing' as const,
-      name: "Landing Page / Web Simple",
-      price: "Desde $150 USD",
-      timeline: "Entrega: 7-14 días",
+      name: t('plans.landing.name'),
+      price: t('plans.landing.price'),
+      timeline: t('plans.landing.timeline'),
       techStack: ["Next.js", "WordPress", "Framer", "Webflow", "HTML/CSS"],
-      features: [
-        "Diseño 100% personalizado según tu marca",
-        "Tecnología a elección: Next.js, WordPress, Framer, Webflow o HTML/CSS",
-        "100% responsive y optimizada (Lighthouse 90+)",
-        "Formularios funcionales + integraciones (EmailJS, Resend, etc.)",
-        "SEO técnico on-page completo",
-        "Deploy incluido en la plataforma que prefieras",
-        "30 días de soporte técnico post-entrega"
-      ],
-      buttonText: "Comenzar",
+      features: t.raw('plans.landing.features') as string[],
       buttonStyle: "bg-black text-white hover:bg-neutral-900 border border-neutral-800 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300",
       popular: false
     },
     {
       id: 'ecommerce' as const,
-      name: "E-commerce / Tienda Online",
-      price: "Desde $550 USD",
-      timeline: "Entrega: 3-5 semanas",
+      name: t('plans.ecommerce.name'),
+      price: t('plans.ecommerce.price'),
+      timeline: t('plans.ecommerce.timeline'),
       techStack: ["Shopify", "WooCommerce", "Next.js", "Stripe"],
-      features: [
-        "Catálogo de productos ilimitado con filtros y búsqueda",
-        "Checkout optimizado con Mercado Pago, Stripe o transferencias",
-        "Panel de administración para gestionar productos y pedidos",
-        "Sistema de cupones, descuentos y promociones automatizadas",
-        "Reportes de ventas y estadísticas en tiempo real",
-        "Optimización para conversión (CRO) y mobile-first",
-        "Capacitación personalizada para manejar tu tienda"
-      ],
-      buttonText: "Comenzar",
+      features: t.raw('plans.ecommerce.features') as string[],
       buttonStyle: "bg-white text-black hover:bg-[#d9ff00] transition-colors duration-300",
       popular: true
     },
     {
       id: 'saas' as const,
-      name: "Aplicación Web / SaaS",
-      price: "Desde $2.000 USD",
-      timeline: "Entrega: 2-4 meses",
+      name: t('plans.saas.name'),
+      price: t('plans.saas.price'),
+      timeline: t('plans.saas.timeline'),
       techStack: ["Next.js", "React", "Node.js", "Supabase", "PostgreSQL"],
-      features: [
-        "Arquitectura escalable con backend robusto (Supabase/PostgreSQL)",
-        "Autenticación segura (magic links, OAuth, 2FA)",
-        "Dashboard administrativo con roles y permisos",
-        "Integración de pagos recurrentes (Stripe/Mercado Pago)",
-        "API REST o GraphQL con documentación",
-        "Webhooks y integraciones con servicios de terceros",
-        "Soporte prioritario y mantenimiento 3 meses incluido"
-      ],
-      buttonText: "Comenzar",
+      features: t.raw('plans.saas.features') as string[],
       buttonStyle: "bg-black text-white hover:bg-neutral-900 border border-neutral-800 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300",
       popular: false
     }
