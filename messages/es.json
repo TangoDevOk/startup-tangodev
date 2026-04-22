@@ -30,6 +30,33 @@
       "integrations": "Integraciones"
     }
   },
+  "services": {
+    "title": "Servicios de desarrollo web",
+    "subtitle": "que transforman ideas en realidad",
+    "description": "Desde sitios web corporativos hasta aplicaciones web complejas, creamos soluciones digitales que impulsan el crecimiento de tu negocio.",
+    "ecommerce": {
+      "label": "E-COMMERCE",
+      "title": "Tu tienda online lista para operar",
+      "description": "Armamos tu catálogo, configuramos el checkout e integramos pagos y envíos. Todo preparado para que puedas vender sin depender de terceros."
+    },
+    "webapps": {
+      "label": "APLICACIONES WEB",
+      "title": "De la idea al producto funcional",
+      "description": "Paneles, plataformas y herramientas a medida. Si tenés algo más complejo en mente que un sitio, también lo construimos."
+    },
+    "redesign": {
+      "label": "REDISEÑO",
+      "title": "Actualizamos tu sitio existente",
+      "description": "Si tu web se ve desactualizada o no rinde, la renovamos con tecnología moderna. Mejor rendimiento, mejor experiencia y estructura optimizada para buscadores."
+    },
+    "support": {
+      "label": "SOPORTE",
+      "title": "Tu sitio funcionando siempre",
+      "description": "Mantenimiento, actualizaciones y monitoreo continuo. Nos ocupamos de que tu web siga online sin interrupciones."
+    },
+    "cta": "Constantemente expandimos nuestros servicios para adaptarnos a las necesidades de nuestros clientes. Si tenés algo en mente que no está listado,",
+    "ctaLink": "hablemos"
+  },
   "about": {
     "title": "Sobre Nosotros",
     "subtitle": "Construimos experiencias digitales que perduran",

@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 import WebDevelopmentCard from './WebDevelopmentCard';
 import ContactModal from './ContactModal';
 import InfiniteScroll from './InfiniteScroll';
@@ -11,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const t = useTranslations('services');
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
@@ -111,17 +113,16 @@ export default function Services() {
           <div className="text-center mb-12 lg:mb-16">
             <div ref={titleRef} className="w-full mb-8">
               <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.1] tracking-[-1.2px] font-pp-neue text-center">
-                Servicios de desarrollo web
+                {t('title')}
               </div>
               <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.1] tracking-[-1.2px] font-pp-neue text-center">
-                que transforman ideas en realidad
+                {t('subtitle')}
               </div>
             </div>
             
             <div className="max-w-[733.333px] mx-auto">
               <p ref={descriptionRef} className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue text-center">
-                Desde sitios web corporativos hasta aplicaciones web complejas, 
-                creamos soluciones digitales que impulsan el crecimiento de tu negocio.
+                {t('description')}
               </p>
             </div>
           </div>
@@ -144,15 +145,14 @@ export default function Services() {
                 <div className="relative z-10 p-8 lg:p-10">
                   <div className="mb-6">
                     <span className="text-xs font-semibold text-stone-500 tracking-[0.2em] uppercase font-pp-neue">
-                      E-COMMERCE
+                      {t('ecommerce.label')}
                     </span>
                   </div>
                   <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-4 font-pp-neue">
-                    Tu tienda online lista para operar
+                    {t('ecommerce.title')}
                   </h3>
                   <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
-                    Armamos tu catálogo, configuramos el checkout e integramos pagos y envíos.
-                    Todo preparado para que puedas vender sin depender de terceros.
+                    {t('ecommerce.description')}
                   </p>
                 </div>
 
@@ -197,16 +197,15 @@ export default function Services() {
                 <div className="relative z-10 p-8 lg:p-10 flex flex-col flex-grow">
                   <div className="mb-4">
                     <span className="text-xs font-semibold text-stone-500 tracking-[0.2em] uppercase font-pp-neue">
-                      APLICACIONES WEB
+                      {t('webapps.label')}
                     </span>
                   </div>
                   
                   <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-4 font-pp-neue">
-                      De la idea al producto funcional
+                    {t('webapps.title')}
                   </h3>
                   <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
-                  Paneles, plataformas y herramientas a medida. Si tenés algo más complejo en mente que un sitio,
-                   también lo construimos.
+                    {t('webapps.description')}
                   </p>
                 </div>
               </div>
@@ -220,15 +219,14 @@ export default function Services() {
               >
                 <div className="mb-6">
                   <span className="text-xs font-semibold text-stone-500 tracking-[0.2em] uppercase font-pp-neue">
-                    REDISEÑO
+                    {t('redesign.label')}
                   </span>
                 </div>
                 <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-4 font-pp-neue">
-                  Actualizamos tu sitio existente
+                  {t('redesign.title')}
                 </h3>
                 <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-8">
-                  Si tu web se ve desactualizada o no rinde, la renovamos con tecnología moderna.
-                  Mejor rendimiento, mejor experiencia y estructura optimizada para buscadores.
+                  {t('redesign.description')}
                 </p>
                 
                 <div className="rounded-xl overflow-hidden">
@@ -351,16 +349,15 @@ export default function Services() {
                 <div className="relative z-10 p-8 lg:p-10 flex flex-col flex-grow">
                   <div className="mb-4">
                     <span className="text-xs font-semibold text-stone-500 tracking-[0.2em] uppercase font-pp-neue">
-                      SOPORTE
+                      {t('support.label')}
                     </span>
                   </div>
                   
                   <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-4 font-pp-neue">
-                    Tu sitio funcionando siempre
+                    {t('support.title')}
                   </h3>
                   <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
-                    Mantenimiento, actualizaciones y monitoreo continuo.
-                    Nos ocupamos de que tu web siga online sin interrupciones.
+                    {t('support.description')}
                   </p>
                 </div>
               </div>
@@ -373,12 +370,12 @@ export default function Services() {
             <div className="rounded-2xl p-8 lg:p-10 text-center transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
       
               <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue max-w-2xl mx-auto">
-                Constantemente expandimos nuestros servicios para adaptarnos a las necesidades de nuestros clientes. Si tenés algo en mente que no está listado,{' '}
+                {t('cta')}{' '}
                 <button 
                   onClick={() => setIsContactModalOpen(true)}
                   className="text-[#d9ff00] hover:underline transition-all duration-300 font-medium"
                 >
-                  hablemos
+                  {t('ctaLink')}
                 </button>.
               </p>
             </div>

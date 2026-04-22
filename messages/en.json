@@ -30,6 +30,33 @@
       "integrations": "Integrations"
     }
   },
+  "services": {
+    "title": "Web development services",
+    "subtitle": "that transform ideas into reality",
+    "description": "From corporate websites to complex web applications, we create digital solutions that drive your business growth.",
+    "ecommerce": {
+      "label": "E-COMMERCE",
+      "title": "Your online store ready to operate",
+      "description": "We set up your catalog, configure checkout and integrate payments and shipping. Everything prepared so you can sell without depending on third parties."
+    },
+    "webapps": {
+      "label": "WEB APPLICATIONS",
+      "title": "From idea to functional product",
+      "description": "Dashboards, platforms and custom tools. If you have something more complex in mind than a website, we build that too."
+    },
+    "redesign": {
+      "label": "REDESIGN",
+      "title": "We update your existing site",
+      "description": "If your website looks outdated or underperforms, we renew it with modern technology. Better performance, better experience and search engine optimized structure."
+    },
+    "support": {
+      "label": "SUPPORT",
+      "title": "Your site always working",
+      "description": "Maintenance, updates and continuous monitoring. We take care of keeping your website online without interruptions."
+    },
+    "cta": "We constantly expand our services to adapt to our clients' needs. If you have something in mind that's not listed,",
+    "ctaLink": "let's talk"
+  },
   "about": {
     "title": "About Us",
     "subtitle": "We build digital experiences that last",

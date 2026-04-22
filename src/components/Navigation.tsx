@@ -310,7 +310,12 @@ export default function Navigation() {
                 <div className="hidden lg:flex items-center gap-1 font-medium text-sm">
                   <button
                     onClick={() => {
-                      document.cookie = `locale=es; path=/; max-age=31536000`;
+                      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                      if (isLocalhost) {
+                        document.cookie = `locale=es; path=/; expires=${new Date(Date.now() + 31536000000).toUTCString()}`;
+                      } else {
+                        document.cookie = `locale=es; path=/; max-age=31536000; SameSite=Lax`;
+                      }
                       window.location.reload();
                     }}
                     className={`transition-all duration-300 ${
@@ -324,7 +329,12 @@ export default function Navigation() {
                   <span className="text-stone-600">/</span>
                   <button
                     onClick={() => {
-                      document.cookie = `locale=en; path=/; max-age=31536000`;
+                      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                      if (isLocalhost) {
+                        document.cookie = `locale=en; path=/; expires=${new Date(Date.now() + 31536000000).toUTCString()}`;
+                      } else {
+                        document.cookie = `locale=en; path=/; max-age=31536000; SameSite=Lax`;
+                      }
                       window.location.reload();
                     }}
                     className={`transition-all duration-300 ${
@@ -455,7 +465,12 @@ export default function Navigation() {
                   <span className="text-white/60 text-sm font-pp-neue">{tLang('mobileLabel')}</span>
                   <button
                     onClick={() => {
-                      document.cookie = `locale=es; path=/; max-age=31536000`;
+                      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                      if (isLocalhost) {
+                        document.cookie = `locale=es; path=/; expires=${new Date(Date.now() + 31536000000).toUTCString()}`;
+                      } else {
+                        document.cookie = `locale=es; path=/; max-age=31536000; SameSite=Lax`;
+                      }
                       window.location.reload();
                     }}
                     className={`transition-all duration-300 font-pp-neue ${
@@ -469,7 +484,12 @@ export default function Navigation() {
                   <span className="text-white/40">/</span>
                   <button
                     onClick={() => {
-                      document.cookie = `locale=en; path=/; max-age=31536000`;
+                      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                      if (isLocalhost) {
+                        document.cookie = `locale=en; path=/; expires=${new Date(Date.now() + 31536000000).toUTCString()}`;
+                      } else {
+                        document.cookie = `locale=en; path=/; max-age=31536000; SameSite=Lax`;
+                      }
                       window.location.reload();
                     }}
                     className={`transition-all duration-300 font-pp-neue ${
