@@ -66,7 +66,13 @@
     "projects": "Proyectos completados",
     "technologies": "Tecnologías",
     "team": "Nuestro equipo",
-    "techStack": "Stack Tecnológico"
+    "techStack": "Stack Tecnológico",
+    "clients": "Clientes satisfechos",
+    "support": "Soporte técnico",
+    "teamTitle": "El Equipo",
+    "fullStack": "Full Stack Developer",
+    "frontend": "Frontend Developer",
+    "cta": "Ver más sobre nosotros"
   },
   "pricing": {
     "title": "Inversión según tu proyecto",
@@ -121,12 +127,16 @@
     "customEnd": "para armar una propuesta a medida."
   },
   "contact": {
-    "title": "Hablemos de tu proyecto",
-    "subtitle": "Contanos qué necesitás. Respondemos en menos de 24hs.",
+    "quick": "CONTACTO RÁPIDO",
+    "title": "Iniciemos tu proyecto",
+    "subtitle": "Contanos sobre tu idea y nos pondremos en contacto dentro de las próximas 24 horas.",
     "form": {
-      "name": "Nombre *",
+      "name": "Nombre completo *",
+      "namePlaceholder": "Juan Pérez",
       "email": "Email *",
-      "phone": "Teléfono",
+      "emailPlaceholder": "juan@empresa.com",
+      "phone": "Teléfono (opcional)",
+      "phonePlaceholder": "+54 11 1234-5678",
       "projectType": "Tipo de proyecto *",
       "projectTypeOptions": {
         "placeholder": "Seleccioná una opción",
@@ -139,27 +149,42 @@
       },
       "message": "Contanos sobre tu proyecto *",
       "messagePlaceholder": "Describe brevemente tu proyecto, objetivos y timeline...",
-      "submit": "Enviar mensaje",
+      "submit": "Enviar solicitud",
       "sending": "Enviando...",
-      "success": "¡Mensaje enviado! Te contactamos pronto.",
-      "error": "Hubo un error al enviar. Intentá de nuevo."
+      "emailAlternative": "También podés escribirnos directamente a",
+      "successTitle": "¡Mensaje enviado!",
+      "successMessage": "Recibimos tu solicitud. Nos pondremos en contacto muy pronto.",
+      "close": "Cerrar",
+      "error": "Error al enviar el mensaje. Por favor, intentá nuevamente o escribinos directamente a tangodev08@gmail.com"
     }
   },
   "footer": {
-    "brand": "tangodev",
-    "description": "Desarrollo web sin el circo. Landings y e-commerce que venden.",
-    "rights": "Todos los derechos reservados.",
-    "legal": {
-      "title": "Legal",
-      "privacy": "Política de Privacidad",
-      "terms": "Términos de Servicio",
-      "cookies": "Política de Cookies"
-    },
-    "contact": {
-      "title": "Contacto",
-      "email": "contacto@tangodev.com",
-      "phone": "+54 9 11 1234-5678"
-    }
+    "sitemap": "SITEMAP",
+    "home": "Inicio",
+    "services": "Servicios",
+    "pricing": "Precios",
+    "projects": "Proyectos",
+    "about": "Nosotros",
+    "company": "EMPRESA",
+    "socials": "SOCIALS",
+    "licenses": "Licencias",
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies",
+    "support": "SOPORTE",
+    "faq": "Preguntas Frecuentes",
+    "techSupport": "Soporte Técnico",
+    "quickContact": "CONTACTO RÁPIDO",
+    "quickContactCta": "¿Tenés una idea? Contanos en 2 líneas.",
+    "emailPlaceholder": "tu@email.com",
+    "projectPlaceholder": "Tu proyecto en 2 líneas...",
+    "send": "Enviar",
+    "rights": "©{year} TANGODEV. TODOS LOS DERECHOS RESERVADOS.",
+    "madeWith": "HECHO CON ❤️ EN ARGENTINA",
+    "thingBy": "A THING BY TANGODEV",
+    "linkedin": "LINKEDIN.",
+    "instagram": "INSTAGRAM.",
+    "twitter": "X/TWITTER"
   },
   "language": {
     "es": "ES",

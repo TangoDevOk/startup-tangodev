@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -12,6 +13,7 @@ interface AboutModalProps {
 }
 
 export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
+  const t = useTranslations('about');
   const overlayRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -128,23 +130,20 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           {/* Header */}
           <div className="mb-8">
             <div className="text-stone-500 text-sm font-pp-neue tracking-wider uppercase mb-4">
-              Sobre Nosotros
+              {t('title')}
             </div>
             <h2 className="text-4xl lg:text-5xl font-medium text-white font-pp-neue leading-tight mb-6">
-              Construimos experiencias digitales que perduran
+              {t('subtitle')}
             </h2>
           </div>
 
           {/* Descripción principal */}
           <div className="space-y-6 mb-12">
             <p className="text-stone-300 text-lg lg:text-xl leading-relaxed font-pp-neue">
-              tangodev nace de la pasión por crear soluciones web que realmente impactan.
-              Somos un equipo de desarrolladores con experiencia en tecnologías modernas
-              y metodologías ágiles.
+              {t('description')}
             </p>
             <p className="text-stone-400 text-base lg:text-lg leading-relaxed font-pp-neue">
-              Combinamos diseño minimalista con código limpio para entregar productos 
-              digitales escalables, desde landing pages hasta aplicaciones web complejas.
+              {t('description2')}
             </p>
           </div>
 
@@ -155,7 +154,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 5+
               </div>
               <div className="text-stone-400 text-sm font-pp-neue">
-                Años de experiencia
+                {t('experience')}
               </div>
             </div>
             <div className="space-y-2">
@@ -163,7 +162,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 10+
               </div>
               <div className="text-stone-400 text-sm font-pp-neue">
-                Proyectos completados
+                {t('projects')}
               </div>
             </div>
             <div className="space-y-2">
@@ -171,7 +170,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 100%
               </div>
               <div className="text-stone-400 text-sm font-pp-neue">
-                Clientes satisfechos
+                {t('clients')}
               </div>
             </div>
             <div className="space-y-2">
@@ -179,7 +178,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 24/7
               </div>
               <div className="text-stone-400 text-sm font-pp-neue">
-                Soporte técnico
+                {t('support')}
               </div>
             </div>
           </div>
@@ -210,7 +209,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           {/* Team info */}
           <div className="space-y-4 border-t border-stone-800 pt-8">
             <h3 className="text-xl font-medium text-white font-pp-neue mb-4">
-              El Equipo
+              {t('teamTitle')}
             </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
@@ -230,7 +229,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   >
                     Tomás Martorelli
                   </a>
-                  <div className="text-stone-400 text-sm font-pp-neue">Full Stack Developer</div>
+                  <div className="text-stone-400 text-sm font-pp-neue">{t('fullStack')}</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -244,7 +243,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   >
                     Nicolás Siciliano
                   </a>
-                  <div className="text-stone-400 text-sm font-pp-neue">Frontend Developer</div>
+                  <div className="text-stone-400 text-sm font-pp-neue">{t('frontend')}</div>
                 </div>
               </div>
             </div>
@@ -256,7 +255,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
               href="/about"
               className="inline-block bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-base font-pp-neue"
             >
-              Ver más sobre nosotros
+              {t('cta')}
             </a>
           </div>
         </div>

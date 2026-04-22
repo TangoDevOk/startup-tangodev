@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import AboutModal from './AboutModal';
 import LegalModal from './LegalModal';
 import ContactModal from './ContactModal';
@@ -9,6 +10,7 @@ import ContactModal from './ContactModal';
 type LegalType = 'licenses' | 'terms' | 'privacy' | 'cookies';
 
 const Footer = () => {
+  const t = useTranslations('footer');
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [legalModalOpen, setLegalModalOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<LegalType | null>(null);
@@ -55,17 +57,17 @@ const Footer = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-8 font-pp-neue">SITEMAP</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-8 font-pp-neue">{t('sitemap')}</h4>
               <div className="space-y-3">
-                <a href="#" className="block text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue">Inicio</a>
-                <a href="#servicios" className="block text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue">Servicios</a>
-                <a href="#pricing" className="block text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue">Precios</a>
+                <a href="#" className="block text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue">{t('home')}</a>
+                <a href="#servicios" className="block text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue">{t('services')}</a>
+                <a href="#pricing" className="block text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue">{t('pricing')}</a>
                 <button
                   type="button"
                   onClick={() => setIsAboutModalOpen(true)}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                 >
-                  Nosotros
+                  {t('about')}
                 </button>
               </div>
             </motion.div>
@@ -78,35 +80,35 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="space-y-6"
             >
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-8 font-pp-neue">EMPRESA</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-8 font-pp-neue">{t('company')}</h4>
               <div className="space-y-3">
                 <button
                   type="button"
                   onClick={() => handleLegalClick('licenses')}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                 >
-                  Licencias
+                  {t('licenses')}
                 </button>
                 <button
                   type="button"
                   onClick={() => handleLegalClick('terms')}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                 >
-                  Términos y Condiciones
+                  {t('terms')}
                 </button>
                 <button
                   type="button"
                   onClick={() => handleLegalClick('privacy')}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                 >
-                  Política de Privacidad
+                  {t('privacy')}
                 </button>
                 <button
                   type="button"
                   onClick={() => handleLegalClick('cookies')}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                 >
-                  Política de Cookies
+                  {t('cookies')}
                 </button>
               </div>
             </motion.div>
@@ -119,21 +121,21 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-8 font-pp-neue">SOPORTE</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-8 font-pp-neue">{t('support')}</h4>
               <div className="space-y-3">
                 <a 
                   href="#preguntas" 
                   onClick={handleFAQClick}
                   className="block text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                 >
-                  Preguntas Frecuentes
+                  {t('faq')}
                 </a>
                 <button
                   type="button"
                   onClick={() => setIsContactModalOpen(true)}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                 >
-                  Soporte Técnico
+                  {t('techSupport')}
                 </button>
               </div>
             </motion.div>
@@ -146,24 +148,24 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-6 ml-auto"
             >
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-8 font-pp-neue">CONTACTO RÁPIDO</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-8 font-pp-neue">{t('quickContact')}</h4>
               <div className="space-y-6">
                 <p className="text-white text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue">
-                  ¿Tenés una idea? Contanos en 2 líneas.
+                  {t('quickContactCta')}
                 </p>
                 <div className="flex gap-4">
                   <input 
                     type="email" 
-                    placeholder="tu@email.com"
+                    placeholder={t('emailPlaceholder')}
                     className="flex-1 bg-transparent border-b border-white/30 text-white placeholder:text-white/50 py-3 focus:outline-none focus:border-white transition-colors text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                   />
                   <input 
                     type="text" 
-                    placeholder="Tu proyecto en 2 líneas..."
+                    placeholder={t('projectPlaceholder')}
                     className="flex-1 bg-transparent border-b border-white/30 text-white placeholder:text-white/50 py-3 focus:outline-none focus:border-white transition-colors text-[21.3333px] font-medium leading-[29.8667px] font-pp-neue"
                   />
                   <button className="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-medium text-lg font-pp-neue whitespace-nowrap">
-                    Enviar
+                    {t('send')}
                   </button>
                 </div>
               </div>
@@ -182,24 +184,24 @@ const Footer = () => {
             className="mb-12"
           >
             <div className="text-center mb-6">
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-4 font-pp-neue">CONTACTO RÁPIDO</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-4 font-pp-neue">{t('quickContact')}</h4>
               <p className="text-white text-base font-medium leading-relaxed font-pp-neue">
-                ¿Tenés una idea? Contanos en 2 líneas.
+                {t('quickContactCta')}
               </p>
             </div>
             <div className="flex flex-col gap-4">
               <input 
                 type="email" 
-                placeholder="tu@email.com"
+                placeholder={t('emailPlaceholder')}
                 className="bg-transparent border-b border-white/30 text-white placeholder:text-white/50 py-3 focus:outline-none focus:border-white transition-colors text-base font-medium font-pp-neue"
               />
               <textarea 
-                placeholder="Contanos brevemente tu proyecto..."
+                placeholder={t('projectPlaceholder')}
                 rows={3}
                 className="bg-transparent border-b border-white/30 text-white placeholder:text-white/50 py-3 focus:outline-none focus:border-white transition-colors text-base font-medium font-pp-neue resize-none"
               />
               <button className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-base font-pp-neue">
-                Enviar
+                {t('send')}
               </button>
             </div>
           </motion.div>
@@ -215,18 +217,18 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="space-y-6"
             >
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">SITEMAP</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">{t('sitemap')}</h4>
               <div className="space-y-3">
-                <a href="#" className="block text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue">Inicio</a>
-                <a href="#servicios" className="block text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue">Servicios</a>
-                <a href="#pricing" className="block text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue">Precios</a>
-                <a href="#proyectos" className="block text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue">Proyectos</a>
+                <a href="#" className="block text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue">{t('home')}</a>
+                <a href="#servicios" className="block text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue">{t('services')}</a>
+                <a href="#pricing" className="block text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue">{t('pricing')}</a>
+                <a href="#proyectos" className="block text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue">{t('projects')}</a>
                 <button
                   type="button"
                   onClick={() => setIsAboutModalOpen(true)}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 font-medium font-pp-neue"
                 >
-                  Nosotros
+                  {t('about')}
                 </button>
               </div>
             </motion.div>
@@ -239,35 +241,35 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">COMPANY</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">{t('company')}</h4>
               <div className="space-y-3">
                 <button
                   type="button"
                   onClick={() => handleLegalClick('licenses')}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue"
                 >
-                  Licensing
+                  {t('licenses')}
                 </button>
                 <button
                   type="button"
                   onClick={() => handleLegalClick('terms')}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue"
                 >
-                  Terms & Conditions
+                  {t('terms')}
                 </button>
                 <button
                   type="button"
                   onClick={() => handleLegalClick('privacy')}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue"
                 >
-                  Privacy Policy
+                  {t('privacy')}
                 </button>
                 <button
                   type="button"
                   onClick={() => handleLegalClick('cookies')}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue"
                 >
-                  Cookie Policy
+                  {t('cookies')}
                 </button>
               </div>
             </motion.div>
@@ -280,32 +282,32 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-6"
             >
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">SOPORTE</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">{t('support')}</h4>
               <div className="space-y-3">
                 <a 
                   href="#preguntas" 
                   onClick={handleFAQClick}
                   className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue"
                 >
-                  FAQ
+                  {t('faq')}
                 </a>
                 <button
                   type="button"
                   onClick={() => setIsContactModalOpen(true)}
                   className="block text-left text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue"
                 >
-                  Soporte Técnico
+                  {t('techSupport')}
                 </button>
               </div>
             </motion.div>
 
             {/* Grupo Derecho - SOCIALS */}
             <div className="space-y-6 relative z-50">
-              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">SOCIALS</h4>
+              <h4 className="text-sm font-medium text-white/60 tracking-wider uppercase mb-6 font-pp-neue">{t('socials')}</h4>
               <div className="space-y-3">
                 <a href="https://www.linkedin.com/in/tangodev" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue">LinkedIn</a>
                 <a href="https://www.instagram.com/tangodevok/?hl=es" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue">Instagram</a>
-                <a href="#" className="block text-white hover:text-white/70 transition-colors duration-300 text-sm font-medium font-pp-neue">X/Twitter</a>
+                <span className="text-white text-sm font-medium font-pp-neue">X/Twitter</span>
               </div>
             </div>
           </div>
@@ -358,15 +360,15 @@ const Footer = () => {
           className="hidden lg:flex justify-between items-center gap-6 -mt-16 relative z-50"
         >
           <div className="text-white/90 text-sm font-pp-neue">
-            ©{currentYear} TANGODEV. TODOS LOS DERECHOS RESERVADOS.
+            {t('rights', { year: currentYear })}
           </div>
           <div className="flex items-center gap-6 text-white/90 text-sm font-pp-neue">
-            <a href="https://www.linkedin.com/in/tangodev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LINKEDIN.</a>
-            <a href="https://www.instagram.com/tangodevok/?hl=es" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">INSTAGRAM.</a>
-            <span>X/TWITTER</span>
+            <a href="https://www.linkedin.com/in/tangodev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{t('linkedin')}</a>
+            <a href="https://www.instagram.com/tangodevok/?hl=es" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{t('instagram')}</a>
+            <span>{t('twitter')}</span>
           </div>
           <div className="text-white/90 text-sm font-pp-neue">
-            HECHO CON ❤️ EN ARGENTINA
+            {t('madeWith')}
           </div>
         </motion.div>
 
@@ -379,14 +381,14 @@ const Footer = () => {
           className="block lg:hidden text-center space-y-4"
         >
           <div className="text-white/60 text-sm font-pp-neue tracking-wider">
-            A THING BY TANGODEV
+            {t('thingBy')}
           </div>
           <div className="flex justify-center gap-4 text-white/90 text-sm font-pp-neue" style={{ position: 'relative', zIndex: 9999 }}>
             <a href="https://www.linkedin.com/in/tangodev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" style={{ pointerEvents: 'auto', cursor: 'pointer', position: 'relative', zIndex: 10000 }}>LinkedIn</a>
             <a href="https://www.instagram.com/tangodevok/?hl=es" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" style={{ pointerEvents: 'auto', cursor: 'pointer', position: 'relative', zIndex: 10000 }}>Instagram</a>
           </div>
           <div className="text-white/90 text-sm font-pp-neue">
-            ©{currentYear} TANGODEV. ALL RIGHTS RESERVED.
+            {t('rights', { year: currentYear })}
           </div>
         </motion.div>
       </div>

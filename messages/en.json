@@ -66,7 +66,13 @@
     "projects": "Projects completed",
     "technologies": "Technologies",
     "team": "Our team",
-    "techStack": "Tech Stack"
+    "techStack": "Tech Stack",
+    "clients": "Happy clients",
+    "support": "Technical support",
+    "teamTitle": "The Team",
+    "fullStack": "Full Stack Developer",
+    "frontend": "Frontend Developer",
+    "cta": "Learn more about us"
   },
   "pricing": {
     "title": "Investment for your project",
@@ -121,12 +127,16 @@
     "customEnd": "to build a custom proposal."
   },
   "contact": {
-    "title": "Let's talk about your project",
-    "subtitle": "Tell us what you need. We respond in less than 24 hours.",
+    "quick": "QUICK CONTACT",
+    "title": "Let's start your project",
+    "subtitle": "Tell us about your idea and we'll get in touch within the next 24 hours.",
     "form": {
-      "name": "Name *",
+      "name": "Full name *",
+      "namePlaceholder": "John Doe",
       "email": "Email *",
-      "phone": "Phone",
+      "emailPlaceholder": "john@company.com",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+1 555 123-4567",
       "projectType": "Project type *",
       "projectTypeOptions": {
         "placeholder": "Select an option",
@@ -139,27 +149,42 @@
       },
       "message": "Tell us about your project *",
       "messagePlaceholder": "Briefly describe your project, goals and timeline...",
-      "submit": "Send message",
+      "submit": "Send request",
       "sending": "Sending...",
-      "success": "Message sent! We'll contact you soon.",
-      "error": "There was an error sending. Please try again."
+      "emailAlternative": "You can also write us directly at",
+      "successTitle": "Message sent!",
+      "successMessage": "We received your request. We'll get in touch very soon.",
+      "close": "Close",
+      "error": "Error sending message. Please try again or write us directly at tangodev08@gmail.com"
     }
   },
   "footer": {
-    "brand": "tangodev",
-    "description": "Web development without the circus. Landings and e-commerce that sell.",
-    "rights": "All rights reserved.",
-    "legal": {
-      "title": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "cookies": "Cookie Policy"
-    },
-    "contact": {
-      "title": "Contact",
-      "email": "contact@tangodev.com",
-      "phone": "+54 9 11 1234-5678"
-    }
+    "sitemap": "SITEMAP",
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "projects": "Projects",
+    "about": "About",
+    "company": "COMPANY",
+    "socials": "SOCIALS",
+    "licenses": "Licenses",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "support": "SUPPORT",
+    "faq": "FAQ",
+    "techSupport": "Technical Support",
+    "quickContact": "QUICK CONTACT",
+    "quickContactCta": "Have an idea? Tell us in 2 lines.",
+    "emailPlaceholder": "you@email.com",
+    "projectPlaceholder": "Your project in 2 lines...",
+    "send": "Send",
+    "rights": "©{year} TANGODEV. ALL RIGHTS RESERVED.",
+    "madeWith": "MADE WITH ❤️ IN ARGENTINA",
+    "thingBy": "A THING BY TANGODEV",
+    "linkedin": "LINKEDIN.",
+    "instagram": "INSTAGRAM.",
+    "twitter": "X/TWITTER"
   },
   "language": {
     "es": "ES",

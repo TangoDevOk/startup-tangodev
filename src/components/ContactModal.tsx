@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { X, Send, CheckCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
@@ -14,6 +15,7 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }: ContactModalProps) {
+  const t = useTranslations('contact');
   const overlayRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -113,7 +115,7 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
     } catch (error) {
       console.error('Error al enviar formulario:', error);
       setIsSubmitting(false);
-      alert('Error al enviar el mensaje. Por favor, intentá nuevamente o escribinos directamente a tangodev08@gmail.com');
+      alert(t('form.error'));
     }
   };
 
@@ -170,13 +172,13 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
               {/* Header */}
               <div className="mb-8">
                 <div className="text-stone-400 text-sm font-pp-neue font-medium tracking-[0.2em] uppercase mb-4">
-                  CONTACTO RÁPIDO
+                  {t('quick')}
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-medium text-white font-pp-neue leading-tight mb-6">
-                  Iniciemos tu proyecto
+                  {t('title')}
                 </h2>
                 <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
-                  Contanos sobre tu idea y nos pondremos en contacto dentro de las próximas 24 horas.
+                  {t('subtitle')}
                 </p>
               </div>
 
@@ -185,7 +187,7 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
                 {/* Nombre */}
                 <div>
                   <label htmlFor="name" className="block text-stone-400 text-sm font-medium font-pp-neue mb-2">
-                    Nombre completo *
+                    {t('form.name')}
                   </label>
                   <input
                     type="text"
@@ -193,14 +195,14 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
                     name="name"
                     required
                     className="w-full px-4 py-3 bg-black/30 border border-stone-700 rounded-lg text-stone-200 placeholder:text-stone-500 focus:outline-none focus:border-[#d9ff00] transition-colors font-pp-neue"
-                    placeholder="Juan Pérez"
+                    placeholder={t('form.namePlaceholder')}
                   />
                 </div>
 
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className="block text-stone-400 text-sm font-medium font-pp-neue mb-2">
-                    Email *
+                    {t('form.email')}
                   </label>
                   <input
                     type="email"
@@ -208,28 +210,28 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
                     name="email"
                     required
                     className="w-full px-4 py-3 bg-black/30 border border-stone-700 rounded-lg text-stone-200 placeholder:text-stone-500 focus:outline-none focus:border-[#d9ff00] transition-colors font-pp-neue"
-                    placeholder="juan@empresa.com"
+                    placeholder={t('form.emailPlaceholder')}
                   />
                 </div>
 
                 {/* Teléfono */}
                 <div>
                   <label htmlFor="phone" className="block text-stone-400 text-sm font-medium font-pp-neue mb-2">
-                    Teléfono (opcional)
+                    {t('form.phone')}
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     className="w-full px-4 py-3 bg-black/30 border border-stone-700 rounded-lg text-stone-200 placeholder:text-stone-500 focus:outline-none focus:border-[#d9ff00] transition-colors font-pp-neue"
-                    placeholder="+54 11 1234-5678"
+                    placeholder={t('form.phonePlaceholder')}
                   />
                 </div>
 
                 {/* Tipo de proyecto */}
                 <div>
                   <label htmlFor="project-type" className="block text-stone-400 text-sm font-medium font-pp-neue mb-2">
-                    Tipo de proyecto *
+                    {t('form.projectType')}
                   </label>
                   <select
                     id="project-type"
@@ -244,20 +246,20 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
                       backgroundSize: '12px'
                     }}
                   >
-                    <option value="" className="bg-stone-900 text-stone-200">Seleccioná una opción</option>
-                    <option value="landing" className="bg-stone-900 text-stone-200">Landing Page</option>
-                    <option value="website" className="bg-stone-900 text-stone-200">Sitio Web Corporativo</option>
-                    <option value="ecommerce" className="bg-stone-900 text-stone-200">E-commerce</option>
-                    <option value="webapp" className="bg-stone-900 text-stone-200">Aplicación Web</option>
-                    <option value="saas" className="bg-stone-900 text-stone-200">SaaS / Plataforma</option>
-                    <option value="other" className="bg-stone-900 text-stone-200">Otro</option>
+                    <option value="" className="bg-stone-900 text-stone-200">{t('form.projectTypeOptions.placeholder')}</option>
+                    <option value="landing" className="bg-stone-900 text-stone-200">{t('form.projectTypeOptions.landing')}</option>
+                    <option value="website" className="bg-stone-900 text-stone-200">{t('form.projectTypeOptions.website')}</option>
+                    <option value="ecommerce" className="bg-stone-900 text-stone-200">{t('form.projectTypeOptions.ecommerce')}</option>
+                    <option value="webapp" className="bg-stone-900 text-stone-200">{t('form.projectTypeOptions.webapp')}</option>
+                    <option value="saas" className="bg-stone-900 text-stone-200">{t('form.projectTypeOptions.saas')}</option>
+                    <option value="other" className="bg-stone-900 text-stone-200">{t('form.projectTypeOptions.other')}</option>
                   </select>
                 </div>
 
                 {/* Mensaje */}
                 <div>
                   <label htmlFor="message" className="block text-stone-400 text-sm font-medium font-pp-neue mb-2">
-                    Contanos sobre tu proyecto *
+                    {t('form.message')}
                   </label>
                   <textarea
                     id="message"
@@ -265,7 +267,7 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
                     required
                     rows={4}
                     className="w-full px-4 py-3 bg-black/30 border border-stone-700 rounded-lg text-stone-200 placeholder:text-stone-500 focus:outline-none focus:border-[#d9ff00] transition-colors font-pp-neue resize-none"
-                    placeholder="Describe brevemente tu proyecto, objetivos y timeline..."
+                    placeholder={t('form.messagePlaceholder')}
                   />
                 </div>
 
@@ -278,19 +280,19 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-black/20 border-t-black rounded-full animate-spin" />
-                      Enviando...
+                      {t('form.sending')}
                     </>
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Enviar solicitud
+                      {t('form.submit')}
                     </>
                   )}
                 </button>
 
                 {/* Info adicional */}
                 <p className="text-stone-400 text-sm font-pp-neue text-center">
-                  También podés escribirnos directamente a{' '}
+                  {t('form.emailAlternative')}{' '}
                   <a href="mailto:tangodev08@gmail.com" className="text-[#d9ff00] hover:text-[#d9ff00]/80 transition-colors">
                     tangodev08@gmail.com
                   </a>
@@ -304,17 +306,17 @@ export default function ContactModal({ isOpen, onClose, preSelectedPlan = null }
                 <CheckCircle className="w-12 h-12 text-green-500" />
               </div>
               <h3 className="text-3xl lg:text-4xl font-medium text-white font-pp-neue mb-4">
-                ¡Mensaje enviado!
+                {t('form.successTitle')}
               </h3>
               <p className="text-stone-300 text-lg font-pp-neue max-w-md">
-                Recibimos tu solicitud. Nos pondremos en contacto muy pronto.
+                {t('form.successMessage')}
               </p>
               <div className="mt-8">
                 <button
                   onClick={onClose}
                   className="text-stone-400 hover:text-white transition-colors font-pp-neue"
                 >
-                  Cerrar
+                  {t('form.close')}
                 </button>
               </div>
             </div>
