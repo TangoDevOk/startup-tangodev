@@ -1,13 +1,11 @@
-import createMiddleware from 'next-intl/middleware';
-import { defaultLocale, locales } from './i18n/config';
+// Middleware desactivado temporalmente - el locale se maneja solo por cookies
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-export default createMiddleware({
-  locales,
-  defaultLocale,
-  localeDetection: false,
-  alternateLinks: false,
-  localePrefix: 'never'
-});
+export function middleware(request: NextRequest) {
+  // Pasar sin modificar - el locale se lee desde cookies en request.ts
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|favicon.ico|imgs).*)'],
