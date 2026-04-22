@@ -96,6 +96,54 @@
       }
     }
   },
+  "showcase": {
+    "title": {
+      "line1": "Por qué elegir",
+      "line2": "trabajar con nosotros"
+    },
+    "subtitle": "No somos solo otra agencia. Somos tu socio técnico comprometido con el éxito de tu proyecto. Estas son las razones por las que nuestros clientes eligen trabajar con nosotros.",
+    "viewProject": "Ver proyecto",
+    "nav": {
+      "previous": "Proyectos anteriores",
+      "next": "Más proyectos",
+      "goTo": "Ir al proyecto {number}"
+    },
+    "categories": {
+      "fintech": "FINTECH",
+      "ecommerce": "ECOMMERCE",
+      "saas": "SAAS",
+      "tourism": "TURISMO",
+      "design": "DISEÑO",
+      "services": "SERVICIOS",
+      "news": "NOTICIAS"
+    },
+    "projects": {
+      "cryptohub": {
+        "description": "Dashboard de criptomonedas en tiempo real. Tracking de precios, gráficos interactivos y análisis de mercado."
+      },
+      "cordoba": {
+        "description": "Ecommerce de importaciones de smartphones en Argentina."
+      },
+      "rentix": {
+        "description": "Landing page para emprendimiento de cuadros artesanales. Diseño moderno y optimizado para conversión."
+      },
+      "parada": {
+        "description": "Landing page para emprendimiento turístico en el sur argentino."
+      },
+      "kal": {
+        "description": "Sitio web para marca de diseño y arte visual."
+      },
+      "berti": {
+        "description": "Plataforma web para servicios profesionales."
+      },
+      "hechos": {
+        "description": "Portal de noticias y actualidad con diseño moderno."
+      },
+      "contasuite": {
+        "description": "Sistema de gestión contable para empresas. Automatización de procesos financieros y reportes en tiempo real."
+      }
+    }
+  },
   "services": {
     "title": "Servicios de desarrollo web",
     "subtitle": "que transforman ideas en realidad",

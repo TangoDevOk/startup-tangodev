@@ -4,6 +4,7 @@ import { ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 // Estilos específicos para Rentix
 const rentixStyles = `
@@ -17,6 +18,7 @@ const rentixStyles = `
 gsap.registerPlugin(ScrollTrigger);
 
 const Showcase = () => {
+  const t = useTranslations('showcase');
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -62,82 +64,80 @@ const Showcase = () => {
     {
       id: 1,
       title: "Cryptohub",
-      description: "Dashboard de criptomonedas en tiempo real. Tracking de precios, gráficos interactivos y análisis de mercado.",
-      // Imagen principal (card colapsada)
+      description: t('projects.cryptohub.description'),
       background: "url('/imgs/cryptohub.png')",
-      // Imagen opcional para la vista expandida (por defecto usa la misma)
       backgroundExpanded: "url('/imgs/cryptohub2.png')",
-      category: "FINTECH",
+      category: t('categories.fintech'),
       url: "", 
       details: []
     },
      {
       id: 2,
       title: "Cordoba Imports",
-      description: "Ecommerce de importaciones de smartphones en Argentina.",
+      description: t('projects.cordoba.description'),
       background: "url('/imgs/imagencordobaimports.png')",
       backgroundExpanded: "url('/imgs/imagencordobaimports1.jpg')",
-      category: "ECOMMERCE",
+      category: t('categories.ecommerce'),
       url: "https://cordobaimports.infinityfreeapp.com/ecommerce/?i=1",
       details: []
     },
     {
       id: 3,
       title: "Rentix",
-      description: "Landing page para emprendimiento de cuadros artesanales. Diseño moderno y optimizado para conversión.",
+      description: t('projects.rentix.description'),
       background: "url('/imgs/rentix1.jpg')",
       backgroundExpanded: "url('/imgs/rentix.png')",
-      category: "SAAS",
+      category: t('categories.saas'),
       url: "https://rentixapp.ar/",
       details: []
     },
     {
       id: 4,
       title: "Parada Tierra Sur",
-      description: "Landing page para emprendimiento turístico en el sur argentino.",
+      description: t('projects.parada.description'),
       background: "url('/imgs/paradatierrasur.jpg')",
       backgroundExpanded: "url('/imgs/paradatierrasur-2.jpg')",
-      category: "TURISMO",
+      category: t('categories.tourism'),
       url: "https://www.paradatierrasur.com.ar/", 
       details: []
     },
     {
       id: 5,
       title: "Kal",
-      description: "Sitio web para marca de diseño y arte visual.",
+      description: t('projects.kal.description'),
       background: "url('/imgs/kal.png')",
       backgroundExpanded: "url('/imgs/kalanit2.jpg')",
-      category: "DISEÑO",
+      category: t('categories.design'),
       url: "https://by-kalanit.vercel.app/", 
       details: []
     },
     {
       id: 6,
       title: "Berti",
-      description: "Plataforma web para servicios profesionales.",
+      description: t('projects.berti.description'),
       background: "url('/imgs/berti1.jpg')",
       backgroundExpanded: "url('/imgs/berti2.jpg')",
-      category: "SERVICIOS",
+      category: t('categories.services'),
       url: "https://www.berti.com.ar/", 
       details: []
     },
     {
       id: 7,
       title: "Hechos.ar",
-      description: "Portal de noticias y actualidad con diseño moderno.",
+      description: t('projects.hechos.description'),
       background: "url('/imgs/hechos.ar.jpg')",
       backgroundExpanded: "url('/imgs/hechos.ar-2.jpg')",
-      category: "NOTICIAS",
+      category: t('categories.news'),
       url: "https://hechos.ar/",
       details: []
     },
     {
       id: 8,
       title: "Contasuite",
-      description: "Sistema de gestión contable para empresas. Automatización de procesos financieros y reportes en tiempo real.",
+      description: t('projects.contasuite.description'),
       background: "url('/imgs/contasuite.jpg')",
       backgroundExpanded: "url('/imgs/contasuite2.jpg')",
-      category: "FINTECH",
+      category: t('categories.fintech'),
       url: "https://basecontable.vercel.app/",
       details: []
     },
@@ -449,16 +449,16 @@ const Showcase = () => {
           <div className="text-center mb-12 sm:mb-16 lg:mb-32">
             <div ref={titleRef} className="w-full mb-8">
               <div className="title-line text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.05] tracking-[-1.2px] font-helvetica-neue text-center">
-                Por qué elegir
+                {t('title.line1')}
               </div>
               <div className="title-line text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.05] tracking-[-1.2px] font-helvetica-neue text-center">
-                trabajar con nosotros
+                {t('title.line2')}
               </div>
             </div>
             
             <div className="max-w-[920px] mx-auto">
               <p ref={subtitleRef} className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue text-center">
-                No somos solo otra agencia. Somos tu socio técnico comprometido con el éxito de tu proyecto. Estas son las razones por las que nuestros clientes eligen trabajar con nosotros.
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -469,7 +469,7 @@ const Showcase = () => {
               <button
                 onClick={goToPrevPage}
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
-                aria-label="Proyectos anteriores"
+                aria-label={t('nav.previous')}
               >
                 <ChevronLeft className="w-6 h-6 text-white" />
               </button>
@@ -480,7 +480,7 @@ const Showcase = () => {
               <button
                 onClick={goToNextPage}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
-                aria-label="Más proyectos"
+                aria-label={t('nav.next')}
               >
                 <ChevronRight className="w-6 h-6 text-white" />
               </button>
@@ -641,7 +641,7 @@ const Showcase = () => {
                                 window.open(service.url!, "_blank", "noopener,noreferrer");
                               }}
                             >
-                              Ver proyecto
+                              {t('viewProject')}
                               <ArrowRight className="w-4 h-4" />
                             </button>
                           )}
@@ -672,7 +672,7 @@ const Showcase = () => {
                         ? 'bg-white w-6' 
                         : 'bg-white/30 hover:bg-white/50'
                     }`}
-                    aria-label={`Ir al proyecto ${index + 1}`}
+                    aria-label={t('nav.goTo', { number: index + 1 })}
                   />
                 ))}
               </div>

@@ -96,6 +96,54 @@
       }
     }
   },
+  "showcase": {
+    "title": {
+      "line1": "Why choose to",
+      "line2": "work with us"
+    },
+    "subtitle": "We're not just another agency. We're your technical partner committed to the success of your project. These are the reasons our clients choose to work with us.",
+    "viewProject": "View project",
+    "nav": {
+      "previous": "Previous projects",
+      "next": "More projects",
+      "goTo": "Go to project {number}"
+    },
+    "categories": {
+      "fintech": "FINTECH",
+      "ecommerce": "ECOMMERCE",
+      "saas": "SAAS",
+      "tourism": "TOURISM",
+      "design": "DESIGN",
+      "services": "SERVICES",
+      "news": "NEWS"
+    },
+    "projects": {
+      "cryptohub": {
+        "description": "Real-time cryptocurrency dashboard. Price tracking, interactive charts, and market analysis."
+      },
+      "cordoba": {
+        "description": "E-commerce for smartphone imports in Argentina."
+      },
+      "rentix": {
+        "description": "Landing page for artisan frame business. Modern design optimized for conversion."
+      },
+      "parada": {
+        "description": "Landing page for tourism business in southern Argentina."
+      },
+      "kal": {
+        "description": "Website for design and visual art brand."
+      },
+      "berti": {
+        "description": "Web platform for professional services."
+      },
+      "hechos": {
+        "description": "News and current events portal with modern design."
+      },
+      "contasuite": {
+        "description": "Accounting management system for businesses. Automation of financial processes and real-time reports."
+      }
+    }
+  },
   "services": {
     "title": "Web development services",
     "subtitle": "that transform ideas into reality",
