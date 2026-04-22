@@ -144,6 +144,90 @@
       }
     }
   },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Quick answers to the most common questions about our work process and services.",
+    "tabs": {
+      "basics": "Basic Concepts",
+      "process": "Work Process",
+      "pricing": "Pricing & Payments",
+      "support": "Post-launch"
+    },
+    "questions": {
+      "basics": [
+        {
+          "question": "What is a landing page?",
+          "answer": "A landing page is a web page specifically designed to convert visitors into customers or leads. Unlike a full website, it focuses on a single action: getting the user to register, buy, download something, or leave their contact details. It's ideal for marketing campaigns, product launches, or validating business ideas."
+        },
+        {
+          "question": "What is an e-commerce or online store?",
+          "answer": "An e-commerce is a website where you can sell products or services directly. It includes a product catalog with photos and descriptions, shopping cart, payment gateway for processing cards or transfers, shipping system, and an admin panel where you manage stock, prices, and orders. It's your business running 24/7 without needing a physical location."
+        },
+        {
+          "question": "What is a web application or SaaS?",
+          "answer": "It's software that runs in the browser without needing to install anything. Think of Google Docs, Notion, or Spotify Web. It includes complex functionalities like user systems, personalized dashboards, real-time data processing, integrations with other services. It's the solution when you need something beyond an informational website or basic store."
+        },
+        {
+          "question": "What is a corporate website?",
+          "answer": "It's your company's digital presence: who you are, what you do, how to contact you. It includes institutional pages (About, Services, Contact), is optimized for SEO to appear on Google, and projects professionalism. Unlike a landing page that seeks a specific conversion, a corporate site is more informational and comprehensive."
+        },
+        {
+          "question": "What's the difference between a website and a web application?",
+          "answer": "A website is mainly informational: you show content that the user reads (like a digital magazine). A web application is interactive: the user performs complex actions like managing projects, editing documents, processing payments. If you just need to display information and receive forms, it's a website. If you need users to do specific tasks with data, it's an application."
+        },
+        {
+          "question": "Do I need technical knowledge to work with you?",
+          "answer": "Not at all. Our responsibility is to translate your business ideas into technical solutions. We speak in clear language, without unnecessary jargon. We explain every important technical decision and why we recommend it, but you don't need to know how to code or understand technology."
+        }
+      ],
+      "process": [
+        {
+          "question": "How long does it take to develop a web project?",
+          "answer": "An optimized landing page takes 1-2 weeks. A complete corporate website takes 2-4 weeks. More complex web applications may require 1-3 months. We work with agile sprints and incremental deliveries so you see constant progress from the first week."
+        },
+        {
+          "question": "Do I need to have designs ready before starting?",
+          "answer": "It's not necessary. Our process includes the complete design phase. We start from your idea or references you like, create wireframes, high-fidelity designs, and iterate with you until you're 100% satisfied before writing a single line of code."
+        },
+        {
+          "question": "What if I want to make changes during development?",
+          "answer": "Changes are a natural part of the process. During development, we have weekly reviews where you can request adjustments. Minor changes are included. For major changes that modify the original scope, we present options and adjust timeline and budget transparently."
+        },
+        {
+          "question": "What technologies do you use and why?",
+          "answer": "We mainly work with React, Next.js, and TypeScript for the frontend, and Node.js for the backend. They are modern technologies, proven in production by companies like Netflix and Airbnb. This ensures your site is fast, secure, easy to maintain, and any developer can work with the code in the future."
+        }
+      ],
+      "pricing": [
+        {
+          "question": "How do prices work?",
+          "answer": "We offer reference ranges according to the type of project. The final price is adjusted based on specific scope, required functionalities, necessary integrations, and timeline. The first consultation is free of charge: we talk about your project, give you an honest estimate, and prepare a detailed proposal."
+        },
+        {
+          "question": "Do you include hosting, domain, and maintenance?",
+          "answer": "Hosting and domain can be included or you can use your preferred provider. We offer maintenance plans that include security updates, daily backups, 24/7 monitoring, and technical support. You can also manage it yourself once the project is delivered."
+        },
+        {
+          "question": "Do you accept installment payments or payment by stages?",
+          "answer": "Yes, we work with payment by stages for medium and large projects. Typically: 40% at the start, 40% mid-development, and 20% at completion. For smaller projects, we can split it into 2 payments. We accept transfers, cards, and cryptocurrencies."
+        }
+      ],
+      "support": [
+        {
+          "question": "Do you offer support after launch?",
+          "answer": "Yes, all projects include 30 days of post-launch warranty for bug fixes. We also offer monthly support plans that include updates, monitoring, automatic backups, and priority attention for changes or new functionalities."
+        },
+        {
+          "question": "Can I make changes after it's done?",
+          "answer": "Absolutely. We deliver the complete source code and documentation. You can make changes yourself, hire another developer, or hire us for future updates. There's no vendor lock-in: it's your project and you have total control."
+        },
+        {
+          "question": "Do you train me to manage the site?",
+          "answer": "Yes, we include training sessions according to the project. We teach you to update content, add products (in e-commerce), review statistics, and do basic administrative tasks. We also leave written documentation and tutorial videos to consult whenever you need."
+        }
+      ]
+    }
+  },
   "services": {
     "title": "Web development services",
     "subtitle": "that transform ideas into reality",
