@@ -5,20 +5,26 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTranslations, useLocale } from 'next-intl';
 import ContactModal from './ContactModal';
 import AboutModal from './AboutModal';
 import Image from 'next/image';
+import { type Locale } from '@/i18n/config';
 
 // Registrar el plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false); // true cuando ha scrolleado hacia abajo
-  const [language, setLanguage] = useState('ES'); // 'ES' o 'EN'
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  
+  // i18n
+  const locale = useLocale();
+  const t = useTranslations('navigation');
+  const tLang = useTranslations('language');
   
   // Referencias para GSAP
   const navRef = useRef<HTMLElement>(null);
@@ -254,7 +260,7 @@ export default function Navigation() {
                       : 'text-gradient-ios hover:text-blue-400'
                   }`}
                 >
-                  Inicio
+                  {t('home')}
                 </Link>
                 <button 
                   className={`relative font-medium transition-all duration-500 cursor-pointer ${
@@ -268,7 +274,7 @@ export default function Navigation() {
                     }
                   }}
                 >
-                  Servicios
+                  {t('services')}
                 </button>
                 <button 
                   className={`relative font-medium transition-all duration-500 cursor-pointer ${
@@ -282,7 +288,7 @@ export default function Navigation() {
                     }
                   }}
                 >
-                  Precios
+                  {t('pricing')}
                 </button>
                 <button 
                   onClick={() => setIsAboutModalOpen(true)}
@@ -290,7 +296,7 @@ export default function Navigation() {
                     scrolled ? 'text-base lg:text-base' : 'text-base lg:text-lg'
                   } text-gradient-ios hover:text-blue-400`}
                 >
-                  Nosotros
+                  {t('about')}
                 </button>
               </div>
 
@@ -303,25 +309,31 @@ export default function Navigation() {
                 {/* Language Switcher */}
                 <div className="hidden lg:flex items-center gap-1 font-medium text-sm">
                   <button
-                    onClick={() => setLanguage('ES')}
+                    onClick={() => {
+                      document.cookie = `locale=es; path=/; max-age=31536000; SameSite=Lax`;
+                      window.location.reload();
+                    }}
                     className={`transition-all duration-300 ${
-                      language === 'ES' 
+                      locale === 'es' 
                         ? 'text-[#d9ff00]' 
                         : 'text-stone-500 hover:text-stone-300'
                     }`}
                   >
-                    ES
+                    {tLang('es')}
                   </button>
                   <span className="text-stone-600">/</span>
                   <button
-                    onClick={() => setLanguage('EN')}
+                    onClick={() => {
+                      document.cookie = `locale=en; path=/; max-age=31536000; SameSite=Lax`;
+                      window.location.reload();
+                    }}
                     className={`transition-all duration-300 ${
-                      language === 'EN' 
+                      locale === 'en' 
                         ? 'text-[#d9ff00]' 
                         : 'text-stone-500 hover:text-stone-300'
                     }`}
                   >
-                    EN
+                    {tLang('en')}
                   </button>
                 </div>
                 
@@ -333,7 +345,7 @@ export default function Navigation() {
                       : 'px-6 py-2 lg:px-7 lg:py-3 text-base lg:text-lg'
                   }`}
                 >
-                  <span className="relative z-10 group-hover:text-black transition-colors duration-300">Contacto</span>
+                  <span className="relative z-10 group-hover:text-black transition-colors duration-300">{t('contact')}</span>
                   <div className="absolute inset-0 bg-[#d9ff00] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                 </button>
 
@@ -367,7 +379,7 @@ export default function Navigation() {
             >
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-white/10">
-                <span className="text-white text-xl font-pp-neue font-medium">Menú</span>
+                <span className="text-white text-xl font-pp-neue font-medium">Menu</span>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
@@ -387,7 +399,7 @@ export default function Navigation() {
                       : 'hover:text-[#d9ff00]'
                   }`}
                 >
-                  Inicio
+                  {t('home')}
                 </Link>
                 <button
                   onClick={() => {
@@ -399,7 +411,7 @@ export default function Navigation() {
                   }}
                   className="block w-full text-left text-white text-lg font-medium font-pp-neue hover:text-[#d9ff00] transition-colors"
                 >
-                  Servicios
+                  {t('services')}
                 </button>
                 <button
                   onClick={() => {
@@ -411,7 +423,7 @@ export default function Navigation() {
                   }}
                   className="block w-full text-left text-white text-lg font-medium font-pp-neue hover:text-[#d9ff00] transition-colors"
                 >
-                  Precios
+                  {t('pricing')}
                 </button>
                 <button
                   onClick={() => {
@@ -420,7 +432,7 @@ export default function Navigation() {
                   }}
                   className="block w-full text-left text-white text-lg font-medium font-pp-neue hover:text-[#d9ff00] transition-colors"
                 >
-                  Nosotros
+                  {t('about')}
                 </button>
               </div>
 
@@ -433,34 +445,40 @@ export default function Navigation() {
                   }}
                   className="w-full bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-base font-pp-neue"
                 >
-                  Contacto
+                  {t('contact')}
                 </button>
               </div>
 
               {/* Language Switcher */}
               <div className="p-6 border-t border-white/10">
                 <div className="flex items-center gap-2 font-medium text-sm">
-                  <span className="text-white/60 text-sm font-pp-neue">Idioma:</span>
+                  <span className="text-white/60 text-sm font-pp-neue">{tLang('mobileLabel')}</span>
                   <button
-                    onClick={() => setLanguage('ES')}
+                    onClick={() => {
+                      document.cookie = `locale=es; path=/; max-age=31536000; SameSite=Lax`;
+                      window.location.reload();
+                    }}
                     className={`transition-all duration-300 font-pp-neue ${
-                      language === 'ES' 
+                      locale === 'es' 
                         ? 'text-[#d9ff00]' 
                         : 'text-white/60 hover:text-white'
                     }`}
                   >
-                    ES
+                    {tLang('es')}
                   </button>
                   <span className="text-white/40">/</span>
                   <button
-                    onClick={() => setLanguage('EN')}
+                    onClick={() => {
+                      document.cookie = `locale=en; path=/; max-age=31536000; SameSite=Lax`;
+                      window.location.reload();
+                    }}
                     className={`transition-all duration-300 font-pp-neue ${
-                      language === 'EN' 
+                      locale === 'en' 
                         ? 'text-[#d9ff00]' 
                         : 'text-white/60 hover:text-white'
                     }`}
                   >
-                    EN
+                    {tLang('en')}
                   </button>
                 </div>
               </div>

@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import ContactModal from './ContactModal';
 
 const Pricing = () => {
@@ -12,6 +13,8 @@ const Pricing = () => {
   const titleRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  const t = useTranslations('pricing');
 
   const plans = [
     {
@@ -170,14 +173,14 @@ const Pricing = () => {
           className="mb-8"
         >
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.05] tracking-[-1.2px] font-pp-neue text-center mb-4">
-            Inversión según tu proyecto
+            {t('title')}
           </div>
         </div>
         <p 
           ref={subtitleRef}
           className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue max-w-3xl mx-auto"
         >
-          Rangos de referencia para que tengas una idea del presupuesto. Cada proyecto recibe una cotización personalizada según alcance, complejidad y timeline específicos. Primera consulta sin costo.
+          {t('subtitle')}
         </p>
       </div>
 
@@ -254,7 +257,7 @@ const Pricing = () => {
                       : 'shadow-lg hover:shadow-xl'
                   } transform hover:scale-105`}
                 >
-                  {plan.buttonText}
+                  {t('startButton')}
                 </button>
               </div>
             </div>
@@ -286,7 +289,7 @@ const Pricing = () => {
         {/* Disclaimer abajo */}
         <div className="text-center mt-10 px-4">
           <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue max-w-2xl lg:max-w-xl mx-auto">
-            ¿Necesitás algo fuera de estos paquetes?{" "}
+            {t('customCta')}{" "}
             <button
               onClick={() => {
                 setSelectedPlan(null);
@@ -294,9 +297,9 @@ const Pricing = () => {
               }}
               className="text-[#d9ff00] hover:text-[#d9ff00]/80 transition-colors underline underline-offset-4 cursor-pointer whitespace-nowrap"
             >
-              Conversemos
+              {t('customLink')}
             </button>{" "}
-            para armar una propuesta a medida.
+            {t('customEnd')}
           </p>
         </div>
         

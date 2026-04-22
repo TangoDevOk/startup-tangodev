@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 import Aurora from './Aurora';
 import AboutModal from './AboutModal';
 import ContactModal from './ContactModal';
@@ -10,6 +11,7 @@ import ContactModal from './ContactModal';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  const t = useTranslations('hero');
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -263,38 +265,38 @@ export default function Hero() {
               {/* Column 1: Stack */}
               <div className="space-y-1">
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  React & Next.js
+                  {t('tech.stack')}
                 </div>
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  TypeScript
+                  {t('tech.typescript')}
                 </div>
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  Tailwind CSS
+                  {t('tech.tailwind')}
                 </div>
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  Node.js
+                  {t('tech.nodejs')}
                 </div>
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  Vercel & AWS
+                  {t('tech.vercel')}
                 </div>
               </div>
 
               {/* Column 2: Services */}
               <div className="space-y-1">
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  Landing Pages
+                  {t('services.landing')}
                 </div>
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  E-commerce
+                  {t('services.ecommerce')}
                 </div>
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  Web Apps
+                  {t('services.webapps')}
                 </div>
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  APIs & Backend
+                  {t('services.apis')}
                 </div>
                 <div className="font-pp-neue text-[21.3333px] font-medium leading-[26.8667px] text-stone-400">
-                  Integraciones
+                  {t('services.integrations')}
                 </div>
               </div>
             </div>
@@ -306,10 +308,7 @@ export default function Hero() {
             <div className="max-w-7xl mb-8 sm:mb-10 lg:mb-16">
               <h1 ref={titleRef} className="text-[40px] sm:text-5xl md:text-6xl lg:text-[110px] font-medium leading-[1.15] sm:leading-[1.05] tracking-[-0.5px] sm:tracking-[-1.2px] text-gradient-ios">
                 <span className="title-word block text-gradient-ios">
-                  Desarrollo web
-                </span>
-                <span className="title-word block text-gradient-ios">
-                  sin el circo.
+                  {t('title')}
                 </span>
               </h1>
             </div>
@@ -323,7 +322,7 @@ export default function Hero() {
               >
                 <div className="flip-container h-full flex items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
                   <div style={{ backfaceVisibility: "hidden" }}>
-                    Ver precios
+                    {t('cta.prices')}
                   </div>
                   <div
                     className="absolute inset-0 flex items-center justify-center"
@@ -332,7 +331,7 @@ export default function Hero() {
                       transform: "rotateX(180deg)"
                     }}
                   >
-                    Precios claros
+                    {t('cta.pricesFlip')}
                   </div>
                 </div>
               </button>
@@ -361,7 +360,7 @@ export default function Hero() {
 
                 <div className="flip-container-secondary" style={{ transformStyle: "preserve-3d" }}>
                   <div style={{ backfaceVisibility: "hidden" }}>
-                    Ver trabajos
+                    {t('cta.work')}
                   </div>
                   <div
                     className="absolute top-0 left-0 w-full"
@@ -370,7 +369,7 @@ export default function Hero() {
                       transform: "rotateY(180deg)"
                     }}
                   >
-                    Ver trabajos
+                    {t('cta.workFlip')}
                   </div>
                 </div>
               </button>
@@ -379,10 +378,7 @@ export default function Hero() {
             {/* Description */}
             <div className="max-w-full sm:max-w-[600px] mb-12 sm:mb-14 lg:mb-24">
               <p ref={descriptionRef} className="text-stone-200 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
-                No somos una agencia de 50 personas.
-                Somos dos devs que ejecutan.
-                Lanzamos landings y e-commerce que venden.
-                Sin vueltas. Sin reuniones eternas.
+                {t('subtitle')}
               </p>
             </div>
 
@@ -416,7 +412,7 @@ export default function Hero() {
               />
             </div>
             <div className="h-16 flex items-center justify-between px-2" style={{ backgroundColor: 'rgba(239, 238, 236, 0.06)' }}>
-              <span className="text-white text-sm font-pp-neue font-medium">VER PROYECTOS</span>
+              <span className="text-white text-sm font-pp-neue font-medium">{t('cta.work')}</span>
               <div
                 className="play-button w-6 h-6 bg-stone-800 rounded-full flex items-center justify-center hover:bg-gray-400 transition-colors cursor-pointer"
                 onClick={() => setIsVideoModalOpen(true)}

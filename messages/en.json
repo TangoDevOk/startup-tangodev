@@ -1,0 +1,142 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Web development without the circus.",
+    "subtitle": "We're not a 50-person agency. We're two devs who get things done. We launch landings and e-commerce that sell. No bullshit. No endless meetings.",
+    "cta": {
+      "prices": "View pricing",
+      "pricesFlip": "Clear pricing",
+      "work": "View work",
+      "workFlip": "View work"
+    },
+    "tech": {
+      "stack": "React & Next.js",
+      "typescript": "TypeScript",
+      "tailwind": "Tailwind CSS",
+      "nodejs": "Node.js",
+      "vercel": "Vercel & AWS"
+    },
+    "services": {
+      "landing": "Landing Pages",
+      "ecommerce": "E-commerce",
+      "webapps": "Web Apps",
+      "apis": "APIs & Backend",
+      "integrations": "Integrations"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "We build digital experiences that last",
+    "description": "tangodev is born from the passion for creating web solutions that truly impact. We are a team of developers with experience in modern technologies and agile methodologies.",
+    "description2": "We combine minimalist design with clean code to deliver scalable digital products, from landing pages to complex web applications.",
+    "experience": "Years of experience",
+    "projects": "Projects completed",
+    "technologies": "Technologies",
+    "team": "Our team",
+    "techStack": "Tech Stack"
+  },
+  "pricing": {
+    "title": "Investment for your project",
+    "subtitle": "Reference ranges so you have an idea of the budget. Each project receives a custom quote based on scope, complexity and specific timeline. First consultation free of charge.",
+    "plans": {
+      "landing": {
+        "name": "Landing Page / Simple Website",
+        "price": "From $150 USD",
+        "timeline": "Delivery: 7-14 days",
+        "features": [
+          "100% custom design tailored to your brand",
+          "Technology of choice: Next.js, WordPress, Framer, Webflow or HTML/CSS",
+          "100% responsive and optimized (Lighthouse 90+)",
+          "Functional forms + integrations (EmailJS, Resend, etc.)",
+          "Complete on-page technical SEO",
+          "Deploy included on your preferred platform",
+          "30 days of post-delivery technical support"
+        ]
+      },
+      "ecommerce": {
+        "name": "E-commerce / Online Store",
+        "price": "From $550 USD",
+        "timeline": "Delivery: 3-5 weeks",
+        "features": [
+          "Unlimited product catalog with filters and search",
+          "Optimized checkout with Mercado Pago, Stripe or bank transfers",
+          "Admin panel to manage products and orders",
+          "Automated coupons, discounts and promotions system",
+          "Real-time sales reports and statistics",
+          "Conversion optimization (CRO) and mobile-first",
+          "Personalized training to manage your store"
+        ]
+      },
+      "saas": {
+        "name": "Web Application / SaaS",
+        "price": "From $2,000 USD",
+        "timeline": "Delivery: 2-4 months",
+        "features": [
+          "Scalable architecture with robust backend (Supabase/PostgreSQL)",
+          "Secure authentication (magic links, OAuth, 2FA)",
+          "Advanced dashboard with user roles and permissions",
+          "Recurring payments integration (Stripe/Mercado Pago)",
+          "REST API or GraphQL with documentation",
+          "Webhooks and third-party service integrations",
+          "Priority support and 3 months maintenance included"
+        ]
+      }
+    },
+    "startButton": "Get Started",
+    "customCta": "Need something outside these packages?",
+    "customLink": "Let's talk",
+    "customEnd": "to build a custom proposal."
+  },
+  "contact": {
+    "title": "Let's talk about your project",
+    "subtitle": "Tell us what you need. We respond in less than 24 hours.",
+    "form": {
+      "name": "Name *",
+      "email": "Email *",
+      "phone": "Phone",
+      "projectType": "Project type *",
+      "projectTypeOptions": {
+        "placeholder": "Select an option",
+        "landing": "Landing Page",
+        "website": "Corporate Website",
+        "ecommerce": "E-commerce",
+        "webapp": "Web Application",
+        "saas": "SaaS / Platform",
+        "other": "Other"
+      },
+      "message": "Tell us about your project *",
+      "messagePlaceholder": "Briefly describe your project, goals and timeline...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent! We'll contact you soon.",
+      "error": "There was an error sending. Please try again."
+    }
+  },
+  "footer": {
+    "brand": "tangodev",
+    "description": "Web development without the circus. Landings and e-commerce that sell.",
+    "rights": "All rights reserved.",
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "contact@tangodev.com",
+      "phone": "+54 9 11 1234-5678"
+    }
+  },
+  "language": {
+    "es": "ES",
+    "en": "EN",
+    "mobileLabel": "Language:"
+  }
+}
