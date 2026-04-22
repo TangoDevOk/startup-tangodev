@@ -228,6 +228,147 @@
       ]
     }
   },
+  "legal": {
+    "header": "LEGAL INFORMATION",
+    "lastUpdated": "Last updated: {date}",
+    "licenses": {
+      "title": "Licenses",
+      "subtitle": "Information about our licenses and permits",
+      "software": {
+        "title": "1. Software Licenses",
+        "description": "All web products and services developed by TangoDev are subject to the following license conditions:",
+        "items": [
+          "The client acquires an exclusive usage license for the contracted project.",
+          "The source code remains TangoDev's property until full project payment is completed.",
+          "Once payment is finalized, usage rights are transferred to the client.",
+          "Redistribution or sale of the code without written authorization is prohibited."
+        ]
+      },
+      "content": {
+        "title": "2. Content Licenses",
+        "description": "Content provided by the client (text, images, videos) must be free of copyright restrictions."
+      },
+      "thirdparty": {
+        "title": "3. Third Parties and Dependencies",
+        "description": "Projects may include open-source libraries subject to their own licenses (MIT, Apache, etc.). TangoDev guarantees compliance with all third-party licenses used."
+      },
+      "updates": {
+        "title": "4. Modifications and Updates",
+        "description": "Updates and modifications after project delivery may be subject to additional agreements and may generate additional costs."
+      }
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "subtitle": "General conditions for using our services",
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "description": "By hiring TangoDev services, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, you should not use our services."
+      },
+      "services": {
+        "title": "2. Description of Services",
+        "description": "TangoDev offers web development services including but not limited to: website development, web applications, e-commerce, landing pages, APIs, and cloud services."
+      },
+      "payments": {
+        "title": "3. Payments and Billing",
+        "items": [
+          "Payments will be made as agreed in the service contract.",
+          "An initial deposit is required to begin work.",
+          "The remaining balance must be paid before final project delivery.",
+          "Late payments may result in work suspension."
+        ]
+      },
+      "responsibilities": {
+        "title": "4. Client Responsibilities",
+        "description": "The client is responsible for providing content, information, and materials necessary to complete the project. Delays in providing these materials may affect delivery timelines."
+      },
+      "warranties": {
+        "title": "5. Warranties and Limitations",
+        "description": "TangoDev guarantees that the work will meet the agreed specifications. However, we do not guarantee specific business results nor are we responsible for the client's business decisions."
+      },
+      "cancellations": {
+        "title": "6. Cancellations and Refunds",
+        "description": "Cancellations must be communicated in writing. The initial deposit is non-refundable. Payments for completed work will not be refunded."
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How we protect and use your personal information",
+      "collection": {
+        "title": "1. Information We Collect",
+        "description": "We collect information that you provide directly to us, including:",
+        "items": [
+          "Name and contact details (email, phone)",
+          "Project information and requirements",
+          "Billing and payment information",
+          "Communications with our team"
+        ]
+      },
+      "usage": {
+        "title": "2. Use of Information",
+        "description": "We use the collected information to:",
+        "items": [
+          "Provide and improve our services",
+          "Communicate with you about your project",
+          "Process payments and send invoices",
+          "Comply with legal obligations"
+        ]
+      },
+      "sharing": {
+        "title": "3. Sharing Information",
+        "description": "We do not sell or rent your personal information. We may share information only in the following circumstances:",
+        "items": [
+          "With your explicit consent",
+          "To comply with legal obligations",
+          "With trusted service providers (hosting, payments) who need the information to perform their work"
+        ]
+      },
+      "security": {
+        "title": "4. Data Security",
+        "description": "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, loss, or destruction."
+      },
+      "rights": {
+        "title": "5. Your Rights",
+        "description": "You have the right to access, rectify, delete, or request the portability of your personal data. You can exercise these rights by contacting us at tangodev08@gmail.com"
+      }
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "subtitle": "Information about the use of cookies on our site",
+      "what": {
+        "title": "1. What are Cookies?",
+        "description": "Cookies are small text files that are stored on your device when you visit our website. They help us provide a better user experience."
+      },
+      "types": {
+        "title": "2. Types of Cookies We Use",
+        "essential": {
+          "title": "Essential Cookies",
+          "description": "They are necessary for the basic functioning of the site and cannot be disabled."
+        },
+        "performance": {
+          "title": "Performance Cookies",
+          "description": "They help us understand how visitors interact with the site by collecting anonymous information."
+        },
+        "functional": {
+          "title": "Functional Cookies",
+          "description": "They allow the site to remember your preferences to provide enhanced and personalized features."
+        }
+      },
+      "thirdparty": {
+        "title": "3. Third-Party Cookies",
+        "description": "We may use third-party services (such as Google Analytics) that also set cookies. These cookies are subject to the privacy policies of those third parties."
+      },
+      "management": {
+        "title": "4. Cookie Management",
+        "description": "You can control and/or delete cookies as you wish. You can delete all cookies that are already on your device and you can set most browsers to prevent them from being placed.",
+        "warning": "Please note that if you disable cookies, some site functionalities may not be available."
+      },
+      "moreinfo": {
+        "title": "5. More Information",
+        "description": "For more information on how to manage cookies in different browsers, you can visit:",
+        "safari": "Preferences → Privacy"
+      }
+    }
+  },
   "services": {
     "title": "Web development services",
     "subtitle": "that transform ideas into reality",
