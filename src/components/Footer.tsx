@@ -322,7 +322,7 @@ const Footer = () => {
             transition={{ duration: 2, ease: "easeOut" }}
             className="font-pp-neue text-[21rem] text-stone-400 leading-none tracking-normal select-none pointer-events-none"
           >
-            <span className="font-semibold">Tangodev</span>
+            <span className="font-semibold">tangodev</span>
           </motion.div>
           
           {/* Flecha diagonal hacia arriba-izquierda en la misma línea */}
@@ -347,7 +347,7 @@ const Footer = () => {
             className="text-center font-pp-neue font-semibold text-[7rem] text-white leading-none tracking-tighter select-none pointer-events-none"
             style={{ pointerEvents: 'none' }}
           >
-            <span className="font-neue">Tangodev</span>
+            <span className="font-neue">tangodev</span>
           </motion.div>
         </div>
 
