@@ -85,7 +85,7 @@ const FAQ = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.8 }}
-                          className="text-stone-400 text-sm lg:text-base font-pp-neue font-medium tracking-wider uppercase mb-4 text-center"
+                        className="text-stone-400 text-sm lg:text-base font-pp-neue font-medium tracking-wider uppercase mb-4 text-left"
                         >
                           FAQS
                         </motion.div>
@@ -96,7 +96,7 @@ const FAQ = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.05] tracking-[-1.2px] font-pp-neue mb-8 text-center"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-gradient-ios leading-[1.05] tracking-[-1.2px] font-pp-neue mb-8 text-left"
               >
                 {t('title')}
               </motion.h2>
@@ -107,7 +107,7 @@ const FAQ = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue max-w-md mb-8 text-center"
+                className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue max-w-md mb-8 text-left"
               >
                 {t('subtitle')}
               </motion.p>

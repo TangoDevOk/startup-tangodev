@@ -1,8 +1,10 @@
 'use client';
 
 import GridMotion from './GridMotion';
+import { useTranslations } from 'next-intl';
 
 export default function WebDevelopmentCard() {
+  const t = useTranslations('services.webdev');
   const gridItems = [
     '/imgs/paradatierrasur.jpg',
     '/imgs/kal.png',
@@ -21,15 +23,14 @@ export default function WebDevelopmentCard() {
       <div className="relative z-20 shrink-0 px-5 pt-6 pb-5 sm:p-6 sm:pl-8 sm:pr-8 lg:pt-8 lg:pl-10 lg:pr-10 flex flex-col" style={{ backgroundColor: '#0e0e0d' }}>
         <div className="mb-4 sm:mb-6">
           <span className="text-xs font-semibold text-stone-500 tracking-[0.2em] uppercase font-pp-neue">
-            SITIOS WEB
+            {t('label')}
           </span>
         </div>
         <h3 className="text-stone-200 text-xl sm:text-2xl lg:text-3xl font-medium font-pp-neue mb-3 sm:mb-4">
-          Landings que convierten, sin complicaciones
+          {t('title')}
         </h3>
         <p className="text-stone-400 text-[15px] sm:text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-4 sm:mb-6 lg:mb-8">
-          Páginas enfocadas en performance y conversión.
-          Carga rápida, SEO básico desde el inicio y estructura lista para campañas o lanzamientos.
+          {t('description')}
         </p>
       </div>
 

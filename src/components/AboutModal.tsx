@@ -233,7 +233,13 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-600 to-slate-800 flex-shrink-0"></div>
+                <Image 
+                  src="/imgs/nicolas.png" 
+                  alt="Nicolás Siciliano" 
+                  width={40} 
+                  height={40}
+                  className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                />
                 <div>
                   <a 
                     href="https://portfolio-virid-ten-84.vercel.app/es" 

@@ -14,14 +14,12 @@ export default function Hero() {
   const t = useTranslations('hero');
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   // GSAP refs
   const heroRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
-  const videoRef = useRef<HTMLDivElement>(null);
   const auroraRef = useRef<HTMLDivElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
 
@@ -66,20 +64,6 @@ export default function Hero() {
         });
       }
 
-      // Video player animation
-      if (videoRef.current) {
-        gsap.set(videoRef.current, { opacity: 0, scale: 0.8, y: 100, rotation: 5 });
-        gsap.to(videoRef.current, {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          rotation: 0,
-          duration: 1.5,
-          ease: "back.out(1.7)",
-          delay: 2.5
-        });
-      }
-
       // Nav links animation
       const navLinks = navLinksRef.current?.querySelectorAll('a, div');
       if (navLinks) {
@@ -116,7 +100,6 @@ export default function Hero() {
       // Button hover effects - consolidated
       const primaryButton = buttonsRef.current?.querySelector('.primary-button');
       const secondaryButton = buttonsRef.current?.querySelector('.secondary-button');
-      const playButton = videoRef.current?.querySelector('.play-button');
       const iconsContainer = buttonsRef.current?.querySelector('.icons-container');
 
       if (primaryButton) {
@@ -178,35 +161,6 @@ export default function Hero() {
         });
         secondaryButton.addEventListener('mouseup', () => {
           gsap.to(secondaryButton, { scale: 1.02, duration: 0.1, ease: "power2.out" });
-        });
-      }
-
-      if (playButton) {
-        playButton.addEventListener('mouseenter', () => {
-          gsap.to(playButton, {
-            scale: 1.2,
-            backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            duration: 0.3,
-            ease: "power2.out"
-          });
-          gsap.to(videoRef.current, {
-            scale: 1.02,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        });
-        playButton.addEventListener('mouseleave', () => {
-          gsap.to(playButton, {
-            scale: 1,
-            backgroundColor: 'rgba(120, 120, 120, 1)',
-            duration: 0.3,
-            ease: "power2.out"
-          });
-          gsap.to(videoRef.current, {
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out"
-          });
         });
       }
 
@@ -347,13 +301,13 @@ export default function Hero() {
               >
                 <div className="icons-container flex -space-x-1 lg:-space-x-2">
                   <img
-                    src="https://i.pravatar.cc/150?img=12"
-                    alt="Team member"
+                    src="/imgs/keke.JPG"
+                    alt="Tomas Martorelli"
                     className="w-5 h-5 lg:w-6 lg:h-6 rounded-full object-cover"
                   />
                   <img
-                    src="https://i.pravatar.cc/150?img=33"
-                    alt="Team member"
+                    src="/imgs/nicolas.png"
+                    alt="Nicolas Siciliano"
                     className="w-5 h-5 lg:w-6 lg:h-6 rounded-full object-cover"
                   />
                 </div>
@@ -397,59 +351,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Video Player - Bottom right */}
-      <div ref={videoRef} className="absolute bottom-24 right-24 hidden lg:block z-20">
-        <div className="w-110 h-70 rounded-lg p-6" style={{ backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)' }}>
-          <div className="w-full h-full bg-black rounded-lg overflow-hidden">
-            <div className="relative w-full h-3/4 bg-black">
-              <video
-                src="/videos/Reels.mp4"
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            </div>
-            <div className="h-16 flex items-center justify-between px-2" style={{ backgroundColor: 'rgba(239, 238, 236, 0.06)' }}>
-              <span className="text-white text-sm font-pp-neue font-medium">{t('cta.work')}</span>
-              <div
-                className="play-button w-6 h-6 bg-stone-800 rounded-full flex items-center justify-center hover:bg-gray-400 transition-colors cursor-pointer"
-                onClick={() => setIsVideoModalOpen(true)}
-              >
-                <svg className="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Modals */}
       <AboutModal isOpen={isAboutModalOpen} onClose={() => setIsAboutModalOpen(false)} />
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
-      {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-          <div className="relative w-full max-w-4xl px-4">
-            <button
-              type="button"
-              onClick={() => setIsVideoModalOpen(false)}
-              className="absolute -top-6 right-0 text-stone-200 hover:text-white font-pp-neue text-sm"
-            >
-              Cerrar
-            </button>
-            <div className="mt-4 aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10">
-              <video
-                src="/videos/Reels.mp4"
-                className="w-full h-full object-cover"
-                controls
-                autoPlay
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

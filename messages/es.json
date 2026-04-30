@@ -373,6 +373,11 @@
     "title": "Servicios de desarrollo web",
     "subtitle": "que transforman ideas en realidad",
     "description": "Desde sitios web corporativos hasta aplicaciones web complejas, creamos soluciones digitales que impulsan el crecimiento de tu negocio.",
+    "webdev": {
+      "label": "SITIOS WEB",
+      "title": "Landings que convierten, sin complicaciones",
+      "description": "Páginas enfocadas en performance y conversión. Carga rápida, SEO básico desde el inicio y estructura lista para campañas o lanzamientos."
+    },
     "ecommerce": {
       "label": "E-COMMERCE",
       "title": "Tu tienda online lista para operar",

@@ -373,6 +373,11 @@
     "title": "Web development services",
     "subtitle": "that transform ideas into reality",
     "description": "From corporate websites to complex web applications, we create digital solutions that drive your business growth.",
+    "webdev": {
+      "label": "WEBSITES",
+      "title": "Landing pages that convert, without the hassle",
+      "description": "Pages focused on performance and conversion. Fast loading, basic SEO from day one, and a structure ready for campaigns or launches."
+    },
     "ecommerce": {
       "label": "E-COMMERCE",
       "title": "Your online store ready to operate",
