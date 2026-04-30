@@ -416,6 +416,10 @@
     "teamTitle": "The Team",
     "fullStack": "Full Stack Developer",
     "frontend": "Frontend Developer",
+    "workTitle": "How we work",
+    "workDescription": "We start with a short discovery to align goals, audience and offer. Then we design and build with fast iterations, so you can review progress early and make decisions with real screens, not just docs.",
+    "expectTitle": "What you can expect",
+    "expectDescription": "Clean and maintainable code, clear communication, and practical solutions focused on performance, conversion and long-term scalability for your business.",
     "cta": "Learn more about us"
   },
   "pricing": {

@@ -96,18 +96,18 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
       {/* Modal panel - 1/3 de pantalla */}
       <div
         ref={modalRef}
-        className="absolute top-0 right-0 h-full w-full lg:w-1/3 bg-stone-900 shadow-2xl overflow-hidden"
+        className="absolute top-0 right-0 h-full w-full lg:w-1/3 bg-stone-900 shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Header con Logo y botón cerrar */}
-        <div className="flex items-center justify-between px-6 py-2 border-b border-white/10">
+        <div className="h-24 flex items-center justify-between px-6 border-b border-white/10 shrink-0">
           {/* Logo */}
-          <Link href="/" className="transition-all duration-500 hover:opacity-80 -ml-2">
+          <Link href="/" className="transition-all duration-500 hover:opacity-80">
             <Image 
               src="/imgs/logoblanco.png" 
               alt="Tangodev" 
-              width={200} 
-              height={150}
-              className="h-32 w-auto"
+              width={172} 
+              height={48}
+              className="h-11 w-auto"
               priority
             />
           </Link>
@@ -124,8 +124,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
         {/* Contenido */}
         <div
           ref={contentRef}
-          className="relative overflow-y-auto p-8 lg:p-12"
-          style={{ height: 'calc(100% - 148px)' }}
+          className="relative flex-1 min-h-0 overflow-y-auto p-8 lg:p-12"
         >
           {/* Header */}
           <div className="mb-8">
@@ -147,62 +146,23 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
             </p>
           </div>
 
-          {/* Stats o highlights */}
-          <div className="grid grid-cols-2 gap-6 mb-12">
-            <div className="space-y-2">
-              <div className="text-3xl lg:text-4xl font-bold text-white font-pp-neue">
-                5+
-              </div>
-              <div className="text-stone-400 text-sm font-pp-neue">
-                {t('experience')}
-              </div>
+          {/* Enfoque de trabajo */}
+          <div className="space-y-6 mb-12">
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6">
+              <h3 className="text-white text-xl font-medium font-pp-neue mb-3">
+                {t('workTitle')}
+              </h3>
+              <p className="text-stone-300 text-base leading-relaxed font-pp-neue">
+                {t('workDescription')}
+              </p>
             </div>
-            <div className="space-y-2">
-              <div className="text-3xl lg:text-4xl font-bold text-white font-pp-neue">
-                10+
-              </div>
-              <div className="text-stone-400 text-sm font-pp-neue">
-                {t('projects')}
-              </div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl lg:text-4xl font-bold text-white font-pp-neue">
-                100%
-              </div>
-              <div className="text-stone-400 text-sm font-pp-neue">
-                {t('clients')}
-              </div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl lg:text-4xl font-bold text-white font-pp-neue">
-                24/7
-              </div>
-              <div className="text-stone-400 text-sm font-pp-neue">
-                {t('support')}
-              </div>
-            </div>
-          </div>
-
-          {/* Detalle visual - Stack de tecnologías */}
-          <div className="relative h-48 mb-12">
-            <div className="absolute inset-0 flex items-center justify-center">
-              {/* Stack de "cartas" con tecnologías - efecto similar a los premios rojos */}
-              <div className="relative w-full h-full perspective-1000">
-                {['React', 'Next.js', 'TypeScript', 'Tailwind', 'GSAP'].map((tech, index) => (
-                  <div
-                    key={tech}
-                    className="absolute left-1/2 top-1/2 w-32 h-20 lg:w-40 lg:h-24 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 shadow-lg flex items-center justify-center"
-                    style={{
-                      transform: `translate(-50%, -50%) rotate(${index * 8 - 16}deg) translateY(${index * 8}px)`,
-                      zIndex: 5 - index,
-                    }}
-                  >
-                    <span className="text-white font-bold text-sm lg:text-base font-pp-neue">
-                      {tech}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6">
+              <h3 className="text-white text-xl font-medium font-pp-neue mb-3">
+                {t('expectTitle')}
+              </h3>
+              <p className="text-stone-400 text-base leading-relaxed font-pp-neue">
+                {t('expectDescription')}
+              </p>
             </div>
           </div>
 
@@ -212,6 +172,26 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
               {t('teamTitle')}
             </h3>
             <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <Image 
+                  src="/imgs/nicolas.png" 
+                  alt="Nicolás Siciliano" 
+                  width={40} 
+                  height={40}
+                  className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                />
+                <div>
+                  <a 
+                    href="https://www.linkedin.com/in/nicosici/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white font-medium font-pp-neue hover:text-[#d9ff00] transition-colors duration-300 cursor-pointer"
+                  >
+                    Nicolás Siciliano
+                  </a>
+                  <div className="text-stone-400 text-sm font-pp-neue">Full Stack Developer</div>
+                </div>
+              </div>
               <div className="flex items-start gap-3">
                 <Image 
                   src="/imgs/keke.JPG" 
@@ -229,40 +209,10 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   >
                     Tomás Martorelli
                   </a>
-                  <div className="text-stone-400 text-sm font-pp-neue">{t('fullStack')}</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Image 
-                  src="/imgs/nicolas.png" 
-                  alt="Nicolás Siciliano" 
-                  width={40} 
-                  height={40}
-                  className="w-10 h-10 rounded-full object-cover flex-shrink-0"
-                />
-                <div>
-                  <a 
-                    href="https://portfolio-virid-ten-84.vercel.app/es" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-white font-medium font-pp-neue hover:text-[#d9ff00] transition-colors duration-300 cursor-pointer"
-                  >
-                    Nicolás Siciliano
-                  </a>
-                  <div className="text-stone-400 text-sm font-pp-neue">{t('frontend')}</div>
+                  <div className="text-stone-400 text-sm font-pp-neue">Designer / Full Stack</div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* CTA final */}
-          <div className="mt-12 pt-8 border-t border-stone-800">
-            <a
-              href="/about"
-              className="inline-block bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-base font-pp-neue"
-            >
-              {t('cta')}
-            </a>
           </div>
         </div>
       </div>
